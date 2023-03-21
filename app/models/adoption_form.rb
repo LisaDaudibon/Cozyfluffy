@@ -1,0 +1,2 @@
+class AdoptionForm < ApplicationRecord
+end
