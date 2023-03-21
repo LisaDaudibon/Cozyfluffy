@@ -7,31 +7,30 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarColor02">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="/">Accueil
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/items">Association</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/items">Chats</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/items">Menu</a>
-          </li>
-        </ul>
-        
         <div class="d-flex">
-          <% if current_user %>
-            <a class="btn btn-secondary my-2 my-sm-0" href='/users/edit'>Gérer les admins</a>
-            <a class="btn btn-secondary my-2 my-sm-0" href='/users/sign_out'>Se déconnecter</a>            
-          <% else %>
-            <a class="btn btn-secondary my-2 my-sm-0" href='/users/sign_in'>Se connecter</a>
-          <% end%>
+          <ul class="navbar-nav me-auto">
+            <% if current_user %>
+              <li class="nav-item">
+                <a class="nav-link" href="/admins">Gérer les admins</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/log_out">Se déconnecter</a>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <a class="nav-link" href="/association">Association</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cats">Chats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/menu">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href='/users/sign_in'>Se connecter</a>
+              </li>
+            <% end%>
+          </ul>
         </div>
       </div>
     </div>
