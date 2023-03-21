@@ -26,28 +26,28 @@ main_admin = User.create(
 # Création de 4 chats
 Cat.create(
   name: 'Mistigri',
-  birth_date: Date.new(2017,2,3),
+  birth_date: Date.new(2017,3,12),
   description: "La maman du salon, elle supervise tout avec bienveillance",
   adoption: false
 )
 
 Cat.create(
   name: 'Ronron',
-  birth_date: Date.new(2014,2,3),
+  birth_date: Date.new(2014,10,24),
   description: "Comme son nom l'indique, il ronronne à tout va et adore les câlins",
   adoption: false
 )
 
 Cat.create(
   name: 'Filou',
-  birth_date: Date.new(2021,2,3),
+  birth_date: Date.new(2021,4,6),
   description: "Toujours caché dans un coin, il aime être au chaud",
   adoption: true
 )
 
 Cat.create(
   name: 'Patoune',
-  birth_date: Date.new(2023,1,1),
+  birth_date: Date.new(2023,1,10),
   description: "Le bébé de la bande, il est plein d'énergie et adore jouer",
   adoption: true
 )
