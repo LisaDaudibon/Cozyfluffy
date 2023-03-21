@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :events
 
-  validates :pseudo, presence: true, uniqueness: { scope: :true, message: "Le pseudo %{value} est déjà pris ! Sorry xo xo" }
+  validates :pseudo, 
+    presence: true, 
+    uniqueness: { scope: :true, message: "Le pseudo %{value} est déjà pris ! Sorry xo xo" }
 
 end
