@@ -6,14 +6,12 @@ class AdoptionForm < ApplicationRecord
   validates :email,
     presence: true { message: "Il faut un email pour qu'on puisse te recontacter !" }
     format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Ton email n'a pas le bon format mon coco ! " }
+  validates :test_phone_number
 
-    private
+  private
     def test_phone_number
-      if AdoptionForm.find_by(phone_number: self.phone_number)
-        errors.add (:phone_number, " ")
-
-      elsif self.phone_number.absent?
-        return errors.add (:user, "Enfin voyons, envoie le num, très cher ami ! On va t'appeler lapin quand même ?")
+      if self.phone_number.absent?
+        errors.add (:phone_number, "Enfin voyons, envoie le num, très cher ami ! On va t'appeler lapin quand même ?")
+      end
     end
-
-  end
+end
