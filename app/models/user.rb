@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :events
+
+  validates :pseudo, presence: true, uniqueness: true: { message: "Le pseudo %{value} est déjà pris ! Sorry xo xo" }
+
 end
