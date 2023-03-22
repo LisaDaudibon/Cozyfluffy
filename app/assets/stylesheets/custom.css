@@ -1,8 +1,8 @@
-$pink: #FCE4DE
+$pink: #FAD9D7
 $brown: #A57164
 
 .text-color-pink {
-  color: #FCE4DE;
+  color: #FAD9D7;
 }
 
 .text-color-brown {
@@ -98,11 +98,11 @@ $brown: #A57164
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color:  #FCE4DE ;
+  background-color:  #FAD9D7 ;
 }
 
 .bg-dark {
-  background-color: #FCE4DE !important;
+  background-color: #FAD9D7 !important;
 }
 
 body {
@@ -166,11 +166,10 @@ body {
   margin: 0 0 30px;
 }
 
-
 .button {
   display: inline-block;
   border: 2px solid #A57164;
-  background: #FCE4DE;
+  background: #FAD9D7;
   padding: 10px 20px;
   color: #A57164;
   text-decoration: none;
