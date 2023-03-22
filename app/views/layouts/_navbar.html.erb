@@ -53,21 +53,29 @@
       <div class="container">
         <div class="d-flex">
           <% if current_user %>
-            <a class="nav-link" href="/admin">Gestion admin</a>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin">Gestion admin</a>
+                </li>
+              </ul>
           <%else %>
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="/association">Association</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/cats">Chats</a>
+                <a class="nav-link" href="/cats">Chats</a>
               </li>
             </ul>
           <% end %>
         
           <div class="navbar-brand" ><strong>COZY & FLUFFY</strong></div>
           <% if current_user %>
-            <a class="nav-link" href="/signout">Se déconnecter</a>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/signout">Se déconnecter</a>
+                </li>
+              </ul>
           <%else%>
             <ul class="navbar-nav">
               <li class="nav-item">
