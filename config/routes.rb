@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "home#index"
   resources :admin, only: %i[index new]
-  resources :cats, only: %i[index new show edit]
+  resources :cats, only: %i[index new show edit create]
   resources :association, only: %i[index new show edit]
   resources :menu, only: %i[index new show edit]
 end
