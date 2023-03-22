@@ -3,7 +3,7 @@
   <div class="bs-component">
     <nav class="navbar navbar-nav-custom navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <div class="navbar-brand-custom" ><strong>COZY AND FLUFFY</strong></div>
+        <div class="navbar-brand-custom" ><strong>COZY & FLUFFY</strong></div>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -14,10 +14,10 @@
 
               <% if current_user %>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin">Gérer les admins</a>
+                  <a class="nav-link" href="/admin">Gestion admin</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/users/log_out">Se déconnecter</a>
+                  <a class="nav-link" href="/signout">Se déconnecter</a>
                 </li>
 
               <% else %>
@@ -53,7 +53,7 @@
       <div class="container">
         <div class="d-flex">
           <% if current_user %>
-            <a class="nav-link" href="/admin">Gérer les admins</a>
+            <a class="nav-link" href="/admin">Gestion admin</a>
           <%else %>
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -65,9 +65,9 @@
             </ul>
           <% end %>
         
-            <div class="navbar-brand" ><strong>COZY AND FLUFFY</strong></div>
+          <div class="navbar-brand" ><strong>COZY & FLUFFY</strong></div>
           <% if current_user %>
-            <a class="nav-link" href="/users/log_out">Se déconnecter</a>
+            <a class="nav-link" href="/signout">Se déconnecter</a>
           <%else%>
             <ul class="navbar-nav">
               <li class="nav-item">
