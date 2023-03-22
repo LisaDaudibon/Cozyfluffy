@@ -1,2 +1,20 @@
-<h1>Cats#index</h1>
-<p>Find me in app/views/cats/index.html.erb</p>
+<div class="row">
+  <% @cats.each do |cat| %>
+    <div class="col-sm-6 mb-3 mb-sm-0" id="cats">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title"><strong><%= cat.name%></strong></h5>
+            <p class="card-text">
+            <br>
+                <strong>Description :</strong>
+                <%= cat.description %>
+                <br>
+            </p>
+            <div class="container-row">
+            <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
+        </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
