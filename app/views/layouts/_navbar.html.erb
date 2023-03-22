@@ -1,38 +1,95 @@
-<div class="bs-component">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      
-      <div class="navbar-brand" ><strong>COZY AND FLUFFY</strong></div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<% unless current_page?(root_path) %>
 
+  <div class="bs-component">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        
+        <div class="navbar-brand" ><strong>COZY AND FLUFFY</strong></div>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+          <div class="d-flex">
+            <ul class="navbar-nav me-auto">
+
+              <% if current_user %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admins">Gérer les admins</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/users/log_out">Se déconnecter</a>
+                </li>
+
+              <% else %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/">Accueil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/association">Association</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/cats">Chats</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href='/users/sign_in'><i class="fa fa-fw fa-user"></i></a>
+                </li>
+
+              <% end%>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<% else %>
+
+  <div class="bs-component">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
         <div class="d-flex">
-          <ul class="navbar-nav me-auto">
-            <% if current_user %>
-              <li class="nav-item">
-                <a class="nav-link" href="/admins">Gérer les admins</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/users/log_out">Se déconnecter</a>
-              </li>
-            <% else %>
+          <% if current_user %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admins">Gérer les admins</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/users/log_out">Se déconnecter</a>
+                  </li>
+          <%else %>
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="/association">Association</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/cats">Chats</a>
+                  <a class="nav-link" href="/cats">Chats</a>
+              </li>
+            </ul>
+          <% end %>
+        
+            <div class="navbar-brand" ><strong>COZY AND FLUFFY</strong></div>
+            
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="/menu">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/menu">Menu</a>
+                  <a class="nav-link" href="/users/sign_in">Se connecter</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href='/users/sign_in'>Se connecter</a>
-              </li>
-            <% end%>
-          </ul>
+            </ul>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
-</div>
+    </nav>
+  </div>
+
+
+<% end %>

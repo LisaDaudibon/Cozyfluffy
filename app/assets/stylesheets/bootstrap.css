@@ -65,7 +65,7 @@
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #888;
-  --bs-body-bg: #A57164;
+  --bs-body-bg: #fff;
   --bs-border-width: 1px;
   --bs-border-style: solid;
   --bs-border-color: #eceeef;
@@ -2908,7 +2908,7 @@ textarea.form-control-lg {
 
 .btn-secondary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #f9693a;
+  --bs-btn-bg: #f3969a;
   --bs-btn-border-color: #f3969a;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #cf8083;
@@ -3654,9 +3654,9 @@ textarea.form-control-lg {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
-  --bs-nav-link-color: #A57164;
+  --bs-nav-link-color: var(--bs-link-color);
   --bs-nav-link-hover-color: var(--bs-link-hover-color);
-  --bs-nav-link-disabled-color: #A57164;
+  --bs-nav-link-disabled-color: #888;
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -3672,7 +3672,6 @@ textarea.form-control-lg {
   color: var(--bs-nav-link-color);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  text-align:center;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-link {
@@ -3781,7 +3780,7 @@ textarea.form-control-lg {
   --bs-navbar-active-color: #5a5a5a;
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
-  --bs-navbar-brand-font-size: 1.9rem;
+  --bs-navbar-brand-font-size: 1.25rem;
   --bs-navbar-brand-color: #5a5a5a;
   --bs-navbar-brand-hover-color: #5a5a5a;
   --bs-navbar-nav-link-padding-x: 0.5rem;
@@ -4185,12 +4184,12 @@ textarea.form-control-lg {
 }
 
 .navbar-dark {
-  --bs-navbar-color: #A57164;
-  --bs-navbar-hover-color: #A57164;
-  --bs-navbar-disabled-color: #A57164;
-  --bs-navbar-active-color: #A57164;
-  --bs-navbar-brand-color: #A57164;
-  --bs-navbar-brand-hover-color: #A57164;
+  --bs-navbar-color: rgba(255, 255, 255, 0.6);
+  --bs-navbar-hover-color: #fff;
+  --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+  --bs-navbar-active-color: #fff;
+  --bs-navbar-brand-color: #fff;
+  --bs-navbar-brand-hover-color: #fff;
   --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.6%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
@@ -8222,7 +8221,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color: #FCE4DE !important;
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-black {
@@ -10894,11 +10893,11 @@ textarea.form-control-lg {
 }
 
 .bg-dark {
-  background-color: #FCE4DE !important;
+  background-color: #f3969a !important;
 }
 
 .border-dark {
-  border-color: #FCE4DE !important;
+  border-color: #f3969a !important;
 }
 
 .btn {
@@ -10999,4 +10998,3 @@ legend {
 .list-group-item .h6 {
   color: inherit;
 }
-
