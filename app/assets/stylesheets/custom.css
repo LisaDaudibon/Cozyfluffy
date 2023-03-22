@@ -1,0 +1,180 @@
+$pink: #FCE4DE
+$brown: #A57164
+
+.navbar {
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0.5rem;
+  --bs-navbar-color: rgba(0, 0, 0, 0.3);
+  --bs-navbar-hover-color: #A57164;
+  --bs-navbar-disabled-color: rgba(0, 0, 0, 0.1);
+  --bs-navbar-active-color: #A57164;
+  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-margin-end: 1rem;
+  --bs-navbar-brand-font-size: 1.25rem;
+  --bs-navbar-brand-color: #A57164;
+  --bs-navbar-brand-hover-color: #A57164;
+  --bs-navbar-nav-link-padding-x: 0.5rem;
+  --bs-navbar-toggler-padding-y: 0.25rem;
+  --bs-navbar-toggler-padding-x: 0.75rem;
+  --bs-navbar-toggler-font-size: 1.25rem;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.3%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
+  --bs-navbar-toggler-border-radius: 0.4rem;
+  --bs-navbar-toggler-focus-width: 0.25rem;
+  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+}
+
+.navbar-brand {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  padding-left: 1rem;
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: 45px;
+  color: #A57164;
+  text-decoration: none;
+  white-space: nowrap;
+  justify-content: start;
+}
+
+.navbar-brand-custom {
+  padding-top: var(--bs-navbar-brand-padding-y);
+  padding-bottom: var(--bs-navbar-brand-padding-y);
+  padding-left: 1rem;
+  margin-right: var(--bs-navbar-brand-margin-end);
+  font-size: 25px;
+  color: #A57164;
+  text-decoration: none;
+  white-space: nowrap;
+  justify-content: start;
+}
+
+.navbar-nav {
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: #A57164;
+  --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+  --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  height: 80px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.navbar-nav-custom {
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-padding-y: 0;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-color: #A57164;
+  --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+  --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  height: 60px;
+  font-size: 15px;
+  align-items: center;
+}
+
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color:  #FCE4DE ;
+}
+
+.bg-dark {
+  background-color: #FCE4DE !important;
+}
+
+body {
+  margin: 0;
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: var(--bs-body-text-align);
+  background-color: #A57164;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navbar > .container {
+  justify-content: center;
+}
+
+.carousel-item {
+  height: 20rem;
+  background: grey;
+  color: black; 
+}
+
+.carousel-item img{
+  width: 100%; 
+}
+
+.carousel-container {
+  max-width: 980px;
+  width: 95%;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden ;
+  background-color: white;
+  /* calcul padding-top*/
+}
+
+.jumbotron {
+  padding: 150px 0;
+  background: url(https://www.consoglobe.com/wp-content/uploads/2021/11/chat-maison_2079791452_ban-645x338.jpg.webp) center center;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.jumbotron h1 {
+  font-size: 70px;
+  margin-bottom: 0;
+}
+
+.jumbotron p {
+  font-family: serif;
+  font-size: 30px;
+  font-style: italic;
+  margin: 0 0 30px;
+}
+
+
+.button {
+  display: inline-block;
+  border: 2px solid #A57164;
+  background: #FCE4DE;
+  padding: 10px 20px;
+  color: #A57164;
+  text-decoration: none;
+  transition: 0.3s;
+  align-items: bottom;
+}
+
+.button:hover {
+  background: white;
+  color: #A57164;
+}
+
+.btn-donation {
+  color: white;
+}
