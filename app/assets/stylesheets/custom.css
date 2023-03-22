@@ -1,8 +1,8 @@
-$pink: #FCE4DE
+$pink: #FAD9D7
 $brown: #A57164
 
 .text-color-pink {
-  color: #FCE4DE;
+  color: #FAD9D7;
 }
 
 .text-color-brown {
@@ -98,11 +98,11 @@ $brown: #A57164
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-color:  #FCE4DE ;
+  background-color:  #FAD9D7 ;
 }
 
 .bg-dark {
-  background-color: #FCE4DE !important;
+  background-color: #FAD9D7 !important;
 }
 
 body {
@@ -111,10 +111,11 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  text-align: var(--bs-body-text-align);
+  text-align: center;
   background-color: #A57164;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
 }
 
 .navbar > .container {
@@ -166,11 +167,10 @@ body {
   margin: 0 0 30px;
 }
 
-
 .button {
   display: inline-block;
   border: 2px solid #A57164;
-  background: #FCE4DE;
+  background: #FAD9D7;
   padding: 10px 20px;
   color: #A57164;
   text-decoration: none;
@@ -199,10 +199,11 @@ body {
   justify-content: center;
 }
 
-.button-cat {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10px;
+.btn-cat {
+  height: 40px;
 }
 
+.footer {
+  bottom: 0;
+  width: 100%;
+}
