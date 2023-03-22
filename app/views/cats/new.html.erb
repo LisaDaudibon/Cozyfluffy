@@ -12,23 +12,21 @@
 
   <div class="field">
     <%= f.label :birth_date %><br/>
-    <%= f.text_field :birth_date, autocomplete: "date" %>
+    <%= f.date_field :birth_date, autocomplete: "date" %>
   </div>
 
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description, autocomplete: "description" %>
   </div>
+  <br>
 
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="true" id="flexCheckChecked" checked>
-        <label class="form-check-label" for="adoption">
-        <%= check_box_tag :adoption, true, checked: true %>
-
-        Checked checkbox
-        </label>
+  <div class="field">
+      <p>
+      <%= f.label :adoption %>
+      <%= f.check_box :adoption %>
+   	 </p>
     </div>
-
 
   <div class="actions">
     <%= f.submit "Ajout" %>

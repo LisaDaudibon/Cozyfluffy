@@ -3,6 +3,12 @@
   <h2>Formulaire d'ajout d'utilisateur !</h2>
 
   <div class="field">
+    <%= f.label :pseudo %><br />
+    <%= f.text_field :pseudo %>
+  </div>
+
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -17,6 +23,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+   <p>
+      <%= f.label :admin %>
+      <%= f.check_box :is_admin %>
+   </p> 
+   </div>
+   
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
