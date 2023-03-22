@@ -1,6 +1,14 @@
 $pink: #FCE4DE
 $brown: #A57164
 
+.text-color-pink {
+  color: #FCE4DE;
+}
+
+.text-color-brown {
+  color: #A57164;
+}
+
 .navbar {
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
@@ -103,7 +111,6 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
   background-color: #A57164;
   -webkit-text-size-adjust: 100%;
@@ -139,11 +146,12 @@ body {
 
 .jumbotron {
   padding: 150px 0;
-  background: url(https://www.consoglobe.com/wp-content/uploads/2021/11/chat-maison_2079791452_ban-645x338.jpg.webp) center center;
+  background: url('https://scontent.fmel8-1.fna.fbcdn.net/v/t1.6435-9/188845091_323679679116612_7339041646934366641_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=YjJxdxtmuisAX_4pN5o&_nc_ht=scontent.fmel8-1.fna&oh=00_AfCJBQrflx6Fmmwub2rZoA3GJsGJp2mLnAcT_NWtujmOJg&oe=64425DD1') center center;
   background-size: cover;
   text-align: center;
   color: #fff;
   position: relative;
+  transform: scale(1.0);
 }
 
 .jumbotron h1 {
@@ -178,3 +186,23 @@ body {
 .btn-donation {
   color: white;
 }
+
+.cat-picture {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 180px;
+}
+
+.cats-pictures-container {
+  align-items: center; 
+  justify-content: center;
+}
+
+.button-cat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10px;
+}
+
