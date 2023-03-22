@@ -1,4 +1,48 @@
-<h1>Page admin</h1>
+<div class="container">
+<p class="fw-bold text-success mb-2">Dashbord Admin</p>
 
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Bénévoles</h5>
+        <p class="card-text"><br>
+          <%=link_to "Ajouter un utilisateur", new_admin_path %>
+          </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Chats</h5>
+        <p class="card-text"><br>
+        <i class="fa fa-paw fa-lg"></i>
+         <%=link_to "Ajouter un chat", new_cat_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Produits</h5>
+        <p class="card-text"><br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Association</h5>
+        <p class="card-text"><br>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
-<%=link_to "ajout d'utilisateur", new_admin_path %>
