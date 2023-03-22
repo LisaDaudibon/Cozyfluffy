@@ -7,6 +7,7 @@ class CatsController < ApplicationController
 
   def create
     @cat = Cat.create(cat_params)
+
     if @cat.save 
       redirect_to admin_index_path 
     else
