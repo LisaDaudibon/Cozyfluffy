@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: Cozyfluffy_projetfinal_production
-  username: Cozyfluffy_projetfinal
-  password: <%= ENV["COZYFLUFFY_PROJETFINAL_DATABASE_PASSWORD"] %>
+  database: Cozyfluffy_production
+  username: Cozyfluffy
+  password: <%= ENV["COZYFLUFFY_DATABASE_PASSWORD"] %>
