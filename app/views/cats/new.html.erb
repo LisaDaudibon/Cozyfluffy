@@ -1,2 +1,37 @@
 <h1>Cats#new</h1>
 <p>Find me in app/views/cats/new.html.erb</p>
+<div class="container">
+<p class="fw-bold text-success mb-2">Ajout de Minou</p>
+
+<%=flash[:error] if flash[:error].present?%>
+<%= form_with(model: @cat, url: cats_path) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "nom" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date %><br/>
+    <%= f.date_field :birth_date, autocomplete: "date" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, autocomplete: "description" %>
+  </div>
+  <br>
+
+  <div class="field">
+      <p>
+      <%= f.label :adoption %>
+      <%= f.check_box :adoption %>
+		 </p>
+    </div>
+
+  <div class="actions">
+    <%= f.submit "Ajout" %>
+  </div>
+
+<% end %>
+</div>
+</div>
