@@ -1,9 +1,10 @@
 # Description
 <img src=/app/assets/images/cozy.png width="200" align="right" />
 Ce projet de site web est la vitrine d'un salon de thé associatif sur le concept de bar à chats, l'association à but non lucratif "Cozy & Fluffy" accueille donc des chats de manière permanente ou temporaire et facilite leur adoption. Les fonds du salon de thé servent à faire fonctionner l'association.  
-
+  
 Il s'agit du projet final de la formation THP Fullstack du groupe Cozy & Fluffy.  
-Lien du site en production : https://cozyfluffy.herokuapp.com
+  
+Lien du site en production : [Cozy & Fluffy](https://cozyfluffy.herokuapp.com)
 
 ## Membres du groupe
 - Lisa Daudibon (@LisaDaudibon)
