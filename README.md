@@ -1,9 +1,9 @@
 # Description
 <img src=/app/assets/images/cozy.png width="200" align="right" />
 Ce projet de site web est la vitrine d'un salon de thé associatif sur le concept de bar à chats, l'association à but non lucratif "Cozy & Fluffy" accueille donc des chats de manière permanente ou temporaire et facilite leur adoption. Les fonds du salon de thé servent à faire fonctionner l'association.  
-  
+   
 Il s'agit du projet final de la formation THP Fullstack du groupe Cozy & Fluffy.  
-  
+   
 Lien du site en production : [Cozy & Fluffy](https://cozyfluffy.herokuapp.com)
 
 ## Membres du groupe
@@ -19,9 +19,9 @@ Hébergement : Heroku.
 
 ## Lancement du programme en local
 Télécharger le dossier GitHub en local ou le cloner, puis vérifier les versions utilisées.  
-Lancer un `bundle install` pour installer les versions et gems mentionnées.  
-Faire un `rails db:create db:migrate db:seed` pour créer et remplir la base de données.  
-Lancer le serveur avec `rails s` pour visualiser le site sur localhost:3000.  
+Lancer un __`bundle install`__ pour installer les versions et gems mentionnées.  
+Faire un __`rails db:create db:migrate db:seed`__ pour créer et remplir la base de données.  
+Lancer le serveur avec __`rails s`__ pour visualiser le site sur localhost:3000.  
 
 ## Diagramme ER base de données
 Ci-dessous un diagramme entité-relation de la base de données utilisée :  
