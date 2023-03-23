@@ -209,3 +209,11 @@ body {
   bottom: 0;
   width: 100%;
 }
+
+.cats-container {
+  display: grid;
+  grid-template-columns: 40rem 80rem;
+  grid-gap: 20px;
+}
+
+

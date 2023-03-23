@@ -1,6 +1,8 @@
 class CatsController < ApplicationController
   def index
     @cats = Cat.all
+    @catsresidents = Cat.where(adoption: false)
+    @catsadoptables = Cat.where(adoption: true)
   end
 
   def show
