@@ -1,15 +1,14 @@
-<div class="container">
 <div class="my-form">
-    <%= form_with(model: @cat, url: cats_path) do |f| %>
-    <h2>Ajout d'utilisateur</h2>
+  <%= form_with(model: @cat, url: cats_path) do |f| %>
+    <h2>Ajout d'un chat</h2>
 
     <div class="field">
-      <%= f.label :name %><br />
+      <%= f.label :nom %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "nom", class:"form-control"  %>
     </div>
 
     <div class="field">
-      <%= f.label :birth_date %><br/>
+      <%= f.label :date_de_naissance %><br/>
       <%= f.date_field :birth_date, autocomplete: "date", class:"form-control"  %>
     </div>
 
@@ -20,7 +19,7 @@
 
     <div class="field">
     <p>
-      <%= f.label :adoption %>
+      <%= f.label :disponible_adoption? %>
       <%= f.check_box :adoption %>
 		 </p>
     </div>
@@ -29,5 +28,4 @@
       <%= f.submit "Confirmer", class:"btn btn-primary"  %>
     </div>
   <% end %>
-</div>
 </div>
