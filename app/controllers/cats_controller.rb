@@ -1,8 +1,10 @@
 class CatsController < ApplicationController
   def index
+    @cats = Cat.all
   end
 
   def show
+    @cat = Cat.find(params[:id])
   end
 
   def create
@@ -20,13 +22,28 @@ class CatsController < ApplicationController
     @cat = Cat.new
   end
 
-  def edit
+  def edit 
+    @cat = Cat.find(params[:id])
+
   end
 
   def update
+    @cat = Cat.find(params[:id])
+    if @cat.update(cat_params)
+      flash[:success] = "Le cat a bien été modifié !"
+      redirect_to cat_path(:id)
+    else
+      flash[:danger] = "Erreur : ton formulaire n'était pas correct. Le titre ne doit pas faire moins de 3 chars ou plus de 14 ! Et il doit y avoir un contenu !"
+      render 'edit', status: :unprocessable_entity
+    end
+
   end
 
   def destroy
+    @cat = Cat.find(params[:id])
+    @cat.destroy
+    flash[:success] = "Le chat a été supprimé avec succès !"
+    redirect_to root_path
   end
   private 
 

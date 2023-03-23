@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root "home#index"
   get "home/index"
-  resources :admin, only: %i[index new create ] 
+  resources :admin, only: %i[index new create] 
   resources :cats
   resources :association
   resources :menu, only: %i[index new create edit update destroy]
