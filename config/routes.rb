@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  devise_scope :user do
+    get '/signout', to: 'devise/sessions#destroy', as: :signout
+  end
+
   root "home#index"
-  resources :admin, only: %i[index new]
-  resources :cats, only: %i[index new show edit]
-  resources :association, only: %i[index new show edit]
-  resources :menu, only: %i[index new show edit]
+  get "home/index"
+  resources :admin, only: %i[index new create] 
+  resources :cats
+  resources :association
+  resources :menu, only: %i[index new create edit update destroy]
 end

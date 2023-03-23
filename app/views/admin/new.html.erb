@@ -1,23 +1,38 @@
 <%=flash[:error] if flash[:error].present?%>
-<%= form_with(model: @user, url: admin_index_path) do |f| %>
-  <h2>Formulaire d'ajout d'utilisateur !</h2>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="my-form">
+  <%= form_with(model: @user, url: admin_index_path) do |f| %>
+    <h2>Ajout d'utilisateur</h2>
 
-  <div class="field">
-    <%= f.label :password %><br/>
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :pseudo %><br />
+      <%= f.text_field :pseudo, autofocus: true, autocomplete: "pseudo", class:"form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :password %><br/>
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+    </div>
+
+    <div class="field">
+    <p>
+        <%= f.label :admin %>
+        <%= f.check_box :is_admin %>
+    </p>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Confirmer", class:"btn btn-primary"  %>
+    </div>
+  <% end %>
+</div>

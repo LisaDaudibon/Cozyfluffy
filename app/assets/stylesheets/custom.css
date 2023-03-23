@@ -217,4 +217,25 @@ body > footer {
   left: 0;
   bottom: 0;
   width: 100%;
+
+.cats-title-home {
+  display: flex;
+  background: white;
+  color: #A57164;
+  justify-content: center;
+}
+
+.cats-container {
+  display: grid;
+  grid-template-columns: 40rem 70rem;
+  grid-gap: 20px;
+}
+
+.cats-residents {
+  grid-column: 1;
+  flex-wrap: wrap;
+}
+
+.cats-visitors {
+  grid-column: 2;
 }

@@ -1,2 +1,34 @@
-<h1>Cats#edit</h1>
-<p>Find me in app/views/cats/edit.html.erb</p>
+<%=flash[:error] if flash[:error].present?%>
+
+<div class="my-form">
+  <%= form_with(model: @cat, url: cat_path) do |f| %>
+    <h2>Mise à jour du profil</h2>
+
+    <div class="field">
+      <%= f.label :nom %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "nom", class:"form-control"  %>
+    </div>
+
+    <div class="field">
+      <%= f.label :date_de_naissance %><br/>
+      <%= f.date_field :birth_date, autocomplete: "date", class:"form-control"  %>
+    </div>
+
+    <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, autocomplete: "description", class:"form-control"  %>
+    </div>
+
+    <div class="field">
+    <p>
+      <%= f.label :disponible_adoption? %>
+      <%= f.check_box :adoption %>
+    </p>
+    </div>
+
+    <%= form_for @cat, method: :patch do |f| %>
+      <%= f.submit 'Actualiser', class:"btn btn-primary"%>
+    <% end %>
+
+  <% end %>
+</div>

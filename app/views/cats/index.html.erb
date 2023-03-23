@@ -1,2 +1,50 @@
-<h1>Cats#index</h1>
-<p>Find me in app/views/cats/index.html.erb</p>
+<br>
+<h3 class="d-flex bg-light text-color-brown justify-content-center">NOS CHATS</h3>
+<div class="cats-container">
+  <div class="cats-residents">
+    <h3 class="cats-title-home">Nos chats résidents</h3>
+      <div class="row">  
+        <% @catsresidents.each do |cat| %>
+          <div id="cats">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><strong><%= cat.name%></strong></h5>
+                <p class="card-text">
+                  <br>
+                    <strong>Description :</strong>
+                    <%= cat.description %>
+                  <br>
+                </p>
+                <div class="container-row">
+                  <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
+                </div>
+              </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+  </div>
+  <div class="cats-visitors">
+    <h3 class="cats-title-home">Nos chats à l'adoption</h3>
+      <div class="row">
+        <% @catsadoptables.each do |cat| %>
+          <div id="cats">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><strong><%= cat.name%></strong></h5>
+                <p class="card-text">
+                  <br>
+                    <strong>Description :</strong>
+                    <%= cat.description %>
+                  <br>
+                </p>
+                <div class="container-row">
+                  <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
