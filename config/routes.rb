@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   end
 
   root "home#index"
-  resources :admin, only: %i[index new create ] 
+  get "home/index"
+  resources :admin, only: %i[index new create] 
   resources :cats
-  resources :association, only: %i[index new show edit]
-  resources :menu, only: %i[index new show edit]
+  resources :association
+  resources :menu, only: %i[index new create edit update destroy]
 end
