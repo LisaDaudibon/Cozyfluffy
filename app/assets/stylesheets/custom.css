@@ -1,7 +1,5 @@
-:root {
-  $pink: #FAD9D7;
-  $brown: #A57164;
-}
+$pink: #FAD9D7
+$brown: #A57164
 
 .text-color-pink {
   color: #FAD9D7;
@@ -113,10 +111,11 @@ body {
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
-  text-align: var(--bs-body-text-align);
+  text-align: center;
   background-color: #A57164;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: relative;
 }
 
 .navbar > .container {
@@ -200,17 +199,24 @@ body {
   justify-content: center;
 }
 
-.button-cat {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10px;
+.btn-cat {
+  height: 40px;
+}
+
+body {
+  display: table;
+  width: 100%; 
+}
+
+body > footer {
+   display: table-row;
 }
 
 .footer {
+  position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
-}
 
 .cats-title-home {
   display: flex;
