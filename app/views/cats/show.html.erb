@@ -4,13 +4,16 @@
       <br>
       <strong>Nom :</strong>
       <%= @cat.name %><br>
-      <strong>Date de naissance :</strong>
-      <%= @cat.birth_date %><br>
+      <strong>Date de naissance : </strong>
+      <%= @cat.birth_date.strftime('%d/%m/%Y') %><br>
       <strong>Description :</strong>
       <%= @cat.description %><br>
       <strong>Adoption :</strong>
-      <em><a>(si false non adoptable)</a></em><br>
-      <%= @cat.adoption %><br>
+      <% if @cat.adoption == false %>
+        <a>Non</a><br>
+      <% else %>
+        <a>Oui</a>
+      <% end %>
     </p>
     <div class="container-row">
       <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
