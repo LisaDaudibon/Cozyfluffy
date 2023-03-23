@@ -30,28 +30,32 @@ Cat.create(
   name: 'Mistigri',
   birth_date: Date.new(2017,3,12),
   description: "La maman du salon, elle supervise tout avec bienveillance",
-  adoption: false
+  adoption: false,
+  image_url: "https://images.unsplash.com/photo-1491485880348-85d48a9e5312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 )
 
 Cat.create(
   name: 'Ronron',
   birth_date: Date.new(2014,10,24),
   description: "Comme son nom l'indique, il ronronne à tout va et adore les câlins",
-  adoption: false
+  adoption: false,
+  image_url: "https://images.unsplash.com/photo-1571570703598-39eb580a0329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
 )
 
 Cat.create(
   name: 'Filou',
   birth_date: Date.new(2021,4,6),
-  description: "Toujours caché dans un coin, il aime être au chaud",
-  adoption: true
+  description: "Etant très affectueux, si Filou vous choisi il vous suivra de partout",
+  adoption: true,
+  image_url: "https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 )
 
 Cat.create(
   name: 'Patoune',
   birth_date: Date.new(2023,1,10),
   description: "Le bébé de la bande, il est plein d'énergie et adore jouer",
-  adoption: true
+  adoption: true,
+  image_url: "https://images.unsplash.com/photo-1626170733247-dfc57b1186df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 )
 
 # Création de 2 évènements
