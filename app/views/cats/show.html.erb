@@ -1,2 +1,27 @@
-<h1>Cats#show</h1>
-<p>Find me in app/views/cats/show.html.erb</p>
+
+<div class="row">
+<div class="container">
+<div class="my-form">
+        <h5 class="card-title"><strong><%= @cat.name%></strong></h5>
+            <p class="card-text">
+            <br>
+                <strong>Nom :</strong>
+                <%= @cat.name %><br>
+
+
+                <strong>Date de naissance :</strong>
+                <%= @cat.birth_date %><br>
+                <strong>Description :</strong>
+                <%= @cat.description %><br>
+                <strong>Adoption :</strong>
+                <em><a>(si false non adoptable)</a></em><br>
+                <%= @cat.adoption %><br>
+
+            </p>
+            <div class="container-row">
+            <%= button_to "Mettre a jour le profil du minou", edit_cat_path, class:"btn btn-primary" %>
+        </div>
+     </div>
+   </div>
+</div>
+   
