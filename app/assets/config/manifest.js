@@ -3,4 +3,5 @@
 //= link bootstrap.css
 //= link application.css
 //= link custom.css
+//= link email.css
 
