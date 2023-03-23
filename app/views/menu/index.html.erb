@@ -1,2 +1,22 @@
 <h1>Menu#index</h1>
 <p>Find me in app/views/menu/index.html.erb</p>
+
+<div class="container-fluid">
+  <br>
+  <h3>Notre menu </h3><br>
+  <div class="list-group">
+    <% @products.each do |product| %>
+      <a href="/events/<%= product.id %>/" class="list-group-item list-group-item-action">
+        <h5><%= product.name %></h5>
+      </a>
+    <% end %>
+  </div>
+  <br>
+</div>
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header bg-primary">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Primary card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
