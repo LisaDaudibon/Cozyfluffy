@@ -203,7 +203,18 @@ body {
   height: 40px;
 }
 
+body {
+  display: table;
+  width: 100%; 
+}
+
+body > footer {
+   display: table-row;
+}
+
 .footer {
+  position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
 }
