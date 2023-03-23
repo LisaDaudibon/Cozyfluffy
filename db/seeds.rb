@@ -10,6 +10,8 @@ User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 Cat.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('cats')
+Event.destroy_all
+ActiveRecord::Base.connection.reset_pk_sequence!('events')
 Product.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
 Category.destroy_all
@@ -20,8 +22,8 @@ main_admin = User.create(
   pseudo: 'Admin',
 	email: 'cozyfluffy@yopmail.com',
 	password: 'fluffy123',
-	is_admin: 'true'
-	)
+	is_admin: true
+)
 
 # Création de 4 chats
 Cat.create(
@@ -52,6 +54,21 @@ Cat.create(
   adoption: true
 )
 
+# Création de 2 évènements
+Event.create(
+  title: "Fête de lancement du salon",
+  date: Date.new(2023,4,5),
+  description: "Depuis la naissance de l'association Cozy & Fluffy le 12 Janvier 2023, beaucoup de choses se sont passées... Il est bientôt temps de fêter l'ouverture du salon de thé ! ",
+  user_id: 1
+)
+
+Event.create(
+  title: "Sensibilisation à la stérilisation",
+  date: Date.new(2023,1,10),
+  description: "Une portée non désirée est à l'origine de l'abandon de nombreux chatons, qui peuvent mourir faute de soins, d'alimentation ou grandir dans de mauvaises conditions.",
+  user_id: 1
+)
+
 ### Création du menu
 
 # Catégories
@@ -64,7 +81,7 @@ end
 
 # Boissons chaudes
 hot_drinks = ['Expresso', 'Café allongé', 'Café latte', 'Cappuccino', 'Chocolat chaud', 'Chaï latte', 'Earl grey', 'Matcha', 'Rooibos', 'Infusion au choix']
-hot_prices = ['2,00', '2,50', '3,00', '4,00', '4,00', '4,00', '3,50', '4,00', '4,00', '3,00']
+hot_prices = ['2.00', '2.50', '3.00', '4.00', '4.00', '4.00', '3.50', '4.00', '4.00', '3.00']
 
 10.times do |i|
   Product.create(
@@ -76,7 +93,7 @@ end
 
 # Boissons froides
 cold_drinks = ['Eau bouteille', "Menthe à l'eau", 'Thé froid', 'Limonade', 'Orangina', 'Coca-Cola', "Jus d'orange", 'Smoothie banane', 'Smoothie kiwi', 'Smoothie fraise']
-cold_prices = ['2,00', '3,00', '3,50', '3,50', '4,00', '4,00', '4,00', '5,00', '5,00', '5,00']
+cold_prices = ['2.00', '3.00', '3.50', '3.50', '4.00', '4.00', '4.00', '5.00', '5.00', '5.00']
 
 10.times do |i|
   Product.create(
@@ -88,7 +105,7 @@ end
 
 # Pâtisseries
 pastries = ['Flan', 'Quatre-quart', 'Cookie', 'Brownie', 'Carrot cake', 'Crumble', 'Banoffee']
-pastry_prices = ['3', '3', '3', '3', '4', '4', '5']
+pastry_prices = ['3.00', '3.00', '3.00', '3.00', '4.00', '4.00', '5.00']
 
 7.times do |i|
   Product.create(
@@ -100,7 +117,7 @@ end
 
 # Encas
 snacks = ['Toast', 'Bagel', 'Quiche', 'Sandwich', 'Croque-monsieur', 'Salade césar', 'Salade niçoise']
-snack_prices = ['6,50', '7', '7', '8', '8', '9', '9']
+snack_prices = ['6.50', '7.00', '7.00', '8.00', '8.00', '9.00', '9.00']
 
 7.times do |i|
   Product.create(
