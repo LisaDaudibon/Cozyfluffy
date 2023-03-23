@@ -1,5 +1,7 @@
-$pink: #FAD9D7
-$brown: #A57164
+:root {
+  $pink: #FAD9D7;
+  $brown: #A57164;
+}
 
 .text-color-pink {
   color: #FAD9D7;
@@ -210,10 +212,24 @@ body {
   width: 100%;
 }
 
+.cats-title-home {
+  display: flex;
+  background: white;
+  color: #A57164;
+  justify-content: center;
+}
+
 .cats-container {
   display: grid;
-  grid-template-columns: 40rem 80rem;
+  grid-template-columns: 40rem 70rem;
   grid-gap: 20px;
 }
 
+.cats-residents {
+  grid-column: 1;
+  flex-wrap: wrap;
+}
 
+.cats-visitors {
+  grid-column: 2;
+}
