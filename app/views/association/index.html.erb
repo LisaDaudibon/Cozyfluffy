@@ -1,2 +1,33 @@
-<h1>Association#index</h1>
-<p>Find me in app/views/association/index.html.erb</p>
+<style>
+.asso-container{
+  margin: 20px;
+  /* background: url('https://images.unsplash.com/photo-1571570703598-39eb580a0329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80') center center; */
+}
+</style>
+
+<div class="asso-container">
+  <div class="p-4 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-4">
+      <h4 class="display-8 fw-bold">Qui sommes-nous ?</h4>
+      <p class="col-md-8 fs-6">L'association Cozy & Fluffy a été fondée en Janvier 2023, elle est composée et gérée par Lisa (présidente), Karine (vice-présidente), Chandara (trésorière) et Suzanne (secrétaire). 
+      </p>
+      <p>Mais Cozy & Fluffy est désormais plus qu'une association à but non lucratif, c'est aussi un salon de thé qui sert également de refuge aux chats abandonnés. Les fonds récoltés au salon servent à faire fonctionner le café et l'association. Nous proposons également des évènements et activités tout au long de l'année !
+      </p>
+      <button class="btn btn-primary" type="button">Devenir bénévole</button>
+      <button class="btn btn-info" type="button">Faire un don</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <h3>Les évènements :</h3><br>
+  <div class="list-group">
+    <% @events.each do |event| %>
+      <a href="/association/<%= event.id %>/" class="list-group-item list-group-item-action">
+        <h5><%= event.title %></h5>
+        Date: <%= event.date.strftime('%d/%m/%Y') %>
+      </a>
+    <% end %>
+  </div>
+  <br>
+</div>
