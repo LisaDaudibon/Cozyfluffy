@@ -205,11 +205,12 @@ body > footer {
   display: table-row;
 }
 
-.footer {
+#footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 .cats-title-home {
@@ -258,9 +259,3 @@ body > footer {
   padding-bottom: 2.5rem;   
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
