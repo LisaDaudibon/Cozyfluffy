@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :admin, only: %i[index new create] 
   resources :cats
   resources :association
-  resources :menu, only: %i[index new create edit update destroy]
+  resources :menu
 end
