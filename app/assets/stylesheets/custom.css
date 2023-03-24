@@ -196,20 +196,23 @@ body {
   height: 40px;
 }
 
+html {
+  height:100%;
+}
+
 body {
+  min-height:100%;
+  margin:0;
   display: table;
   width: 100%; 
 }
 
-body > footer {
-  display: table-row;
+footer {
+  height: 65px;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+body > footer {
+   display: table-row;
 }
 
 .cats-title-home {
@@ -256,11 +259,4 @@ body > footer {
 
 .content-wrap {
   padding-bottom: 2.5rem;   
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
 }
