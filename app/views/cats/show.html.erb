@@ -24,9 +24,12 @@
           <a>Oui</a>
         <% end %>
       </p>
+
+      <% if current_user%>
       <div class="container-row">
         <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
       </div>
+      <%end%>
   </div>
    
 </div>

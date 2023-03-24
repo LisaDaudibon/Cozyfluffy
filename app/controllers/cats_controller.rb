@@ -33,7 +33,7 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
     if @cat.update(cat_params)
       flash[:success] = "Le cat a bien été modifié !"
-      redirect_to cat_path(:id)
+      redirect_to cat_path(@cat)
     else
       flash[:danger] = "Erreur : ton formulaire n'était pas correct. Le titre ne doit pas faire moins de 3 chars ou plus de 14 ! Et il doit y avoir un contenu !"
       render 'edit', status: :unprocessable_entity
