@@ -4,16 +4,20 @@ class MenuController < ApplicationController
     @categories = Category.all
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def new
     @product = Product.new
   end
 
-  def create 
-    @product = Product.create(product_params)
-    if @product.save 
-      redirect_to admin_index_path 
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to menu_index_path 
     else
-      flash[:error] = "Echec d'ajout de minou!"
+      flash[:error] = "Impossible d'ajouter un produit à la base de données !"
       render :new
     end
   end
@@ -26,9 +30,9 @@ class MenuController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:success] = "Le produit a bien été modifié !"
-      redirect_to cat_path(:id)
+      redirect_to admin_index_path(:id)
     else
-      flash[:danger] = "Erreur : ton formulaire n'était pas correct. Le titre ne doit pas faire moins de 3 chars ou plus de 14 ! Et il doit y avoir un contenu !"
+      flash[:danger] = "Erreur : ton formulaire n'était pas correct. "
       render 'edit', status: :unprocessable_entity
     end
   end
@@ -41,7 +45,6 @@ class MenuController < ApplicationController
   end
 
   private
-
   def product_params
     params.require(:product).permit(:name, :price, :category_id)
   end
