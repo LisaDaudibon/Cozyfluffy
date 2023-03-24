@@ -1,2 +1,22 @@
-<h1>Association#show</h1>
-<p>Find me in app/views/association/show.html.erb</p>
+<style>
+.my-box {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+  background: white;
+}
+</style>
+
+<div class="container-fluid">
+  <br>
+  <div class="my-box">
+    <p><h4><%= @event.title %></h4><br>
+      <strong>Date: </strong><%= @event.date.strftime('%d/%m/%Y') %><br><br>
+      <strong>Description:<br> </strong><%= @event.description %><br><br>
+      <a class="btn btn-primary btn-lg" href="/association/<%= params[:id] %>/edit" role="button">Modifier</a>
+    </p>
+  </div>
+  <br>
+</div>
