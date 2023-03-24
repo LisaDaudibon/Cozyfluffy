@@ -1,130 +1,267 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:v="urn:schemas-microsoft-com:vml">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
-    <!--[if !mso]--><!-- -->
-    
-    <link href='https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700' rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel="stylesheet">
-    <%= stylesheet_link_tag 'custom'%>
 
-    <!--<![endif]-->
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Email Confirmation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+  /**
+   * Google webfonts. Recommended to include the .woff version for cross-client compatibility.
+   */
+  @media screen {
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff) format('woff');
+    }
 
-    <title>Material Design for Bootstrap</title>
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v10/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff) format('woff');
+    }
+  }
+
+  /**
+   * Avoid browser level font resizing.
+   * 1. Windows Mobile
+   * 2. iOS / OSX
+   */
+  body,
+  table,
+  td,
+  a {
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+  }
+
+  /**
+   * Remove extra space added to tables and cells in Outlook.
+   */
+  table,
+  td {
+    mso-table-rspace: 0pt;
+    mso-table-lspace: 0pt;
+  }
+
+  /**
+   * Better fluid images in Internet Explorer.
+   */
+  img {
+    -ms-interpolation-mode: bicubic;
+  }
+
+  /**
+   * Remove blue links for iOS devices.
+   */
+  a[x-apple-data-detectors] {
+    font-family: inherit !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /**
+   * Fix centering issues in Android 4.4.
+   */
+  div[style*="margin: 16px 0;"] {
+    margin: 0 !important;
+  }
+
+  body {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /**
+   * Collapse table borders to avoid space between cells.
+   */
+  table {
+    border-collapse: collapse !important;
+  }
+
+  a {
+    color: #1a82e2;
+  }
+
+  img {
+    height: auto;
+    line-height: 100%;
+    text-decoration: none;
+    border: 0;
+    outline: none;
+  }
+  </style>
+
 </head>
+<body style="background-color: #a76551;">
 
+  <!-- start preheader -->
+  <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #D4A693; opacity: 0;">
+    A preheader is the short summary text that follows the subject line when an email is viewed in the inbox.
+  </div>
+  <!-- end preheader -->
 
-<body class="respond" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
-    <!-- pre-header -->
-    <table>
-          <tr>
-              <td align="center" class="section-img">
-                  <a href="" style=" border-style: none !important; display: block; border: 0 !important;"><img src="https://i.postimg.cc/T2NjhS3F/banner.png" style="display: block; width: 590px;" width="590" border="0" alt="" /></a>
-              </td>
-          </tr>
-    </table>
+  <!-- start body -->
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
 
-    <table border="0" width="100%" cellpadding="0" cellspacing="0">
-
+    <!-- start logo -->
+    <tr>
+      <td align="center" bgcolor="#D4A693">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
         <tr>
-            <td align="center">
-                <table border="0" align="center" width="590" cellpadding="0" cellspacing="0" class="container590">
-
-                    <tr>
-                        <td align="center" style="color: #f4d7d7; font-size: 24px; font-family: Quicksand, Calibri, sans-serif; font-weight:700;letter-spacing: 3px; line-height: 35px;"
-                            class="main-header">
-                            <!-- section text ======-->
-                            <div style="line-height: 35px">
-                                Bienvenue chez Cozy & Fluffy<span style="color: #f4d7d7;"></span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td align="center">
-                            <table border="0" width="40" align="center" cellpadding="0" cellspacing="0">
-                                <tr>
-                                    <td height="2" style="font-size: 2px; line-height: 2px;">&nbsp;</td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td height="20" style="font-size: 20px; line-height: 20px;">&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td align="left">
-                            <table border="0" width="590" align="center" cellpadding="0" cellspacing="0" class="container590">
-                                <tr>
-                                    <td align="left" style="color: #a76551; font-size: 16px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
-                                        <!-- section text ======-->
-
-                                        <p style="line-height: 24px; margin-bottom:15px;">
-                                            <%=@user.pseudo%>, 
-                                        </p>
-                                        <p style="line-height: 24px;margin-bottom:15px;">
-                                            Bonne nouvelle! Tu fais maintenant partie de l'equipe Cozy & Fluffy.
-                                            Tu auras maintenant acces a un dashboard en te connectant.
-                                        </p>
-                                        <p style="line-height: 24px; margin-bottom:20px;">
-                                        Tes identifiants:<br>
-                                      Email:<%= @user.email%><br>
-                                      Mot de passe:<%= @user.password%>
-                                        </p>
-                                        <table border="0" align="center" width="180" cellpadding="0" cellspacing="0" style="margin-bottom:20px;">
-
-                                            <tr>
-                                                <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" style="color: #a76551; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 22px; letter-spacing: 2px;">
-                                                    <!-- main section button -->
-
-                                                    <div style="line-height: 22px;">
-                                                        <a href="http://localhost:3000/users/sign_in" style="color: #a76551; text-decoration: none;">Mon compte</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td height="10" style="font-size: 10px; line-height: 10px;">&nbsp;</td>
-                                            </tr>
-
-                                        </table>
-                                        <p style="line-height: 24px">
-                                            Love,</br>
-                                            Cozy & Fluffy team
-                                        </p>
-
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+          <tr>
+            <td align="center" valign="top" style="padding: 36px 24px;">
+              <a href="https://sendgrid.com" target="_blank" style="display: inline-block;">
+                <img src="https://i.postimg.cc/GtwY5D1L/icon.png" alt="Logo" border="0" width="48" style="display: block; width: 85px; max-width: 90px; min-width: 48px;">
+              </a>
             </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
         </tr>
-    </table>
-    
-                            <table border="0" align="left" cellpadding="0" cellspacing="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;"
-                                class="container590">
-                                <tr>
-                                    <td align="left" style="color: #aaaaaa; font-size: 14px; font-family: 'Work Sans', Calibri, sans-serif; line-height: 24px;">
-                                        <div style="line-height: 24px;">
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end logo -->
 
-                                            <span style="background: #a76551, color:# f4d7d7">Cozy & fluffy</span>
+    <!-- start hero -->
+    <tr>
+      <td align="center" bgcolor="#D4A693">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+          <tr>
+            <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
+              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; color:#a76551;">Bienvenue chez Cozy & Fluffy</h1>
+            </td>
+          </tr>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end hero -->
 
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-    <!-- end footer ====== -->
+    <!-- start copy block -->
+    <tr>
+      <td align="center" bgcolor="#D4A693">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+
+          <!-- start copy -->
+          <tr>
+            <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color:#a76551;">
+              <p style="margin: 0;">Tap the button below to confirm your email address.</p>
+              <p style="margin: 0;">Identifiant:</p><br>
+              <p style="margin: 0;">Email:<%=@user.email%></p><br>
+              <p style="margin: 0;">Mot dr passe:<%=@user.password%></p><br>
+            </td>
+          </tr>
+          <!-- end copy -->
+
+          <!-- start button -->
+          <tr>
+            <td align="left" bgcolor="#ffffff">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td align="center" bgcolor="#ffffff" style="padding: 12px;">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td align="center" bgcolor="#1a82e2" style="border-radius: 6px;">
+                          <a href="https://localhost:3000" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; background-color:#a76551; color: #ffffff; text-decoration: none; border-radius: 6px;">Viens vite!</a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- end button -->
+
+          <!-- start copy -->
+          <!-- end copy -->
+
+          <!-- start copy -->
+          <tr>
+            <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf; color:#a76551">
+              <p style="margin: 0;">Sweet,<br> Warm</p>
+            </td>
+          </tr>
+          <!-- end copy -->
+
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+    <!-- end copy block -->
+
+    <!-- start footer -->
+   <tr>
+      <td align="center" bgcolor="#FFFEE7" style="padding: 24px;">
+        <!--[if (gte mso 9)|(IE)]>
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tr>
+        <td align="center" valign="top" width="600">
+        <![endif]-->
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+
+          <!-- start permission -->
+          <tr>
+            <td align="center" bgcolor="#FFFEE7" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a76551;">
+              <p style="margin: 0;">Pour contacter Cozy & Fluffy:</p>
+            </td>
+          </tr>
+          <!-- end permission -->
+
+          <!-- start unsubscribe -->
+          <tr>
+            <td align="center" bgcolor="#FFFEE7" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a76551;">
+              <p style="margin: 0;">cozyhoshii@gmail.com</p>
+              <p style="margin: 0;">Pastery 33800 Bordeaux, 15 rue des paquerettes</p>
+            </td>
+          </tr>
+    <!-- end footer -->
+
+  </table>
+
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  <!-- end body -->
 
 </body>
-
 </html>
