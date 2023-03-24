@@ -99,11 +99,14 @@
     border: 0;
     outline: none;
   }
+  .container {
+  background-color: #a76551;
+  }
   </style>
 
 </head>
-<body style="background-color: #a76551;">
-
+<body style="background-color: #a76551; margin: 50px;">
+  <div class="container" >
   <!-- start preheader -->
   <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #D4A693; opacity: 0;">
     A preheader is the short summary text that follows the subject line when an email is viewed in the inbox.
@@ -150,7 +153,7 @@
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
-              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; color:#a76551;">Bienvenue chez Cozy & Fluffy</h1>
+              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; color:#a76551;">Bienvenue chez Cozy & Fluffy <%=@user.pseudo%></h1>
             </td>
           </tr>
         </table>
@@ -176,10 +179,10 @@
           <!-- start copy -->
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color:#a76551;">
-              <p style="margin: 0;">Tap the button below to confirm your email address.</p>
-              <p style="margin: 0;">Identifiant:</p><br>
-              <p style="margin: 0;">Email:<%=@user.email%></p><br>
-              <p style="margin: 0;">Mot dr passe:<%=@user.password%></p><br>
+              <p style="margin: 0;">Voici tes identifiants pour acceder à ton dashboard.</p>
+              <p style="margin: 0;">Identifiant:</p>
+              <p style="margin: 0;">Email: <%=@user.email%></p>
+              <p style="margin: 0;">Mot de passe: <%=@user.password%></p><br>
             </td>
           </tr>
           <!-- end copy -->
@@ -227,32 +230,27 @@
 
     <!-- start footer -->
    <tr>
-      <td align="center" bgcolor="#FFFEE7" style="padding: 24px;">
-        <!--[if (gte mso 9)|(IE)]>
-        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-        <tr>
-        <td align="center" valign="top" width="600">
-        <![endif]-->
+      <td align="center" bgcolor="#d4a693" style="padding: 24px;">
+        
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
 
           <!-- start permission -->
           <tr>
-            <td align="center" bgcolor="#FFFEE7" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a76551;">
+            <td align="center" bgcolor="#d4a693" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #FFFEE7;">
               <p style="margin: 0;">Pour contacter Cozy & Fluffy:</p>
             </td>
           </tr>
           <!-- end permission -->
-
           <!-- start unsubscribe -->
           <tr>
-            <td align="center" bgcolor="#FFFEE7" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #a76551;">
+            <td align="center" bgcolor="#d4a693" style="padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #FFFEE7;">
               <p style="margin: 0;">cozyhoshii@gmail.com</p>
               <p style="margin: 0;">Pastery 33800 Bordeaux, 15 rue des paquerettes</p>
             </td>
           </tr>
     <!-- end footer -->
-
-  </table>
+  	</table>
+        
 
         <!--[if (gte mso 9)|(IE)]>
         </td>
@@ -261,6 +259,8 @@
         <![endif]-->
       </td>
     </tr>
+    
+    </div>
   <!-- end body -->
 
 </body>
