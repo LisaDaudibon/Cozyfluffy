@@ -1,2 +1,30 @@
-<h1>Association#new</h1>
-<p>Find me in app/views/association/new.html.erb</p>
+<div class="container-fluid">
+  <br>
+  <% if @event.errors.any? %>
+    <%= @event.errors.full_messages %>
+  <% end %>
+  <div class="my-form">
+    <h4>Créer un nouvel évènement</h4><br>
+    <%= form_with model: @event, url: association_index_path do |f| %>
+      <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+      <div class="form-group">
+        <label>Titre :</label>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Description :</label>
+        <%= f.text_field :description, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Date :</label>
+        <%= f.date_field :date, class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <button type="submit" class='btn btn-success'>Enregistrer</button>
+      </div>
+    <% end %>
+  </div>
+</div>
