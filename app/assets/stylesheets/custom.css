@@ -187,13 +187,6 @@ body {
   color: white;
 }
 
-.cat-picture {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 180px;
-}
-
 .cats-pictures-container {
   align-items: center; 
   justify-content: center;
@@ -209,7 +202,7 @@ body {
 }
 
 body > footer {
-   display: table-row;
+  display: table-row;
 }
 
 .footer {
@@ -239,4 +232,19 @@ body > footer {
 
 .cats-visitors {
   grid-column: 2;
+}
+
+.cat-img {
+  width: 60%;
+}
+
+.my-form {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white !important;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

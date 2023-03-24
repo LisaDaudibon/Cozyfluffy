@@ -1,22 +1,32 @@
-<div class="my-form">
-  <h5 class="card-title"><strong><%= @cat.name%></strong></h5>
-    <p class="card-text">
-      <br>
-      <strong>Nom :</strong>
-      <%= @cat.name %><br>
-      <strong>Date de naissance : </strong>
-      <%= @cat.birth_date.strftime('%d/%m/%Y') %><br>
-      <strong>Description :</strong>
-      <%= @cat.description %><br>
-      <strong>Adoption :</strong>
-      <% if @cat.adoption == false %>
-        <a>Non</a><br>
-      <% else %>
-        <a>Oui</a>
-      <% end %>
-    </p>
-    <div class="container-row">
-      <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
-    </div>
-</div>
+<div class="block">
+
+  <div class="cat-img">
+    <img
+      style="width: 40%"
+      src="<%= @cat.image_url %>"
+    />
+  </div>
+
+  <div class="my-form" style="float: right">
+    <h5 class="card-title"><strong><%= @cat.name%></strong></h5>
+      <p class="card-text">
+        <br>
+        <strong>Nom :</strong>
+        <%= @cat.name %><br>
+        <strong>Date de naissance : </strong>
+        <%= @cat.birth_date.strftime('%d/%m/%Y') %><br>
+        <strong>Description :</strong>
+        <%= @cat.description %><br>
+        <strong>Adoption :</strong>
+        <% if @cat.adoption == false %>
+          <a>Non</a><br>
+        <% else %>
+          <a>Oui</a>
+        <% end %>
+      </p>
+      <div class="container-row">
+        <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
+      </div>
+  </div>
    
+</div>
