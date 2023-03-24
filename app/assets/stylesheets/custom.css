@@ -187,6 +187,13 @@ body {
   color: white;
 }
 
+.cat-picture {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 180px;
+}
+
 .cats-pictures-container {
   align-items: center; 
   justify-content: center;
