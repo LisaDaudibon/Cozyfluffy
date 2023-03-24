@@ -8,6 +8,7 @@
   <div class="my-form">
     <%= form_with model: @product, url: menu_index_path do |f| %>
     <h2>Ajoute un élément au menu</h2>
+      <%= f.hidden_field :category_id, value: "1" %>
 
     <div class="field">
       <%= f.label :name %><br />
