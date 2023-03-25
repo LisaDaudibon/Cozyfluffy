@@ -187,13 +187,6 @@ main {
   color: white;
 }
 
-.cat-picture {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 180px;
-}
-
 .cats-pictures-container {
   align-items: center; 
   justify-content: center;
@@ -220,13 +213,6 @@ footer {
 
 main > footer {
    display: table-row;
-}
-
-.cats-title-home {
-  display: flex;
-  background: white;
-  color: #A57164;
-  justify-content: center;
 }
 
 .cats-container {
