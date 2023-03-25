@@ -105,7 +105,7 @@
   background-color: #FAD9D7 !important;
 }
 
-body {
+main {
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -207,7 +207,7 @@ html {
   height:100%;
 }
 
-body {
+main {
   min-height:100%;
   margin:0;
   display: table;
@@ -218,7 +218,7 @@ footer {
   height: 65px;
 }
 
-body > footer {
+main > footer {
    display: table-row;
 }
 
