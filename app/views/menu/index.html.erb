@@ -10,16 +10,22 @@
       <div class="col">
         <div class="card border-primary mb-3" style="max-width: 18rem;">
           <div class="card-header text-white bg-primary" style="max-width: 18rem;"><h5><%= category.name %></h5></div>
-          <div class="card-body mb-3">
-            <% @products.each do |product| %>
-              <% if product.category.id === category.id %>
-                <p class="card-text"><%= product.name%></p>
+          <% @products.each do |product| %>
+            <% if product.category.id === category.id %>
+              <%if product.id.even?%>
+                <div class="card-body bg-light">
+                  <p class="card-text"><%= product.name%></p>
+                </div>
+              <% else %>
+                <div class="card-body g-2">
+                  <p class="card-text"><%= product.name%></p>
+                </div>
               <% end %>
             <% end %>
-          </div>
+          <% end %>
         </div>
       </div>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 </div>
 <br>
