@@ -1,16 +1,25 @@
-<h1><div class="text-white text-center">Menu</div></h1>
 
-<div class="row">
-  <% @categories.each do |category| %>
-    <div class="card border-primary mb-3" style="max-width: 18rem;">
-      <div class="card-header text-white bg-primary" style="max-width: 18rem;"><h5><%= category.name %></h5></div>
-      <div class="card-body mb-3">
-        <% @products.each do |product| %>
-          <% if product.category.id === category.id %>
-            <p class="card-text"><%= product.name%></p>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
+<br>
+<div class="container text-primary text-center justify-content-center bg-light ">
+  <h3>MENU</h3>
 </div>
+
+<div class="container text-center bg-dark py-4 px-7 align-items-center">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <% @categories.each do |category| %>
+      <div class="col">
+        <div class="card border-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header text-white bg-primary" style="max-width: 18rem;"><h5><%= category.name %></h5></div>
+          <div class="card-body mb-3">
+            <% @products.each do |product| %>
+              <% if product.category.id === category.id %>
+                <p class="card-text"><%= product.name%></p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>
+<br>
