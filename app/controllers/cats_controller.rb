@@ -44,7 +44,7 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
     @cat.destroy
     flash[:success] = "Le chat a été supprimé avec succès !"
-    redirect_to root_path
+    redirect_to cats_path
   end
 
   private 
