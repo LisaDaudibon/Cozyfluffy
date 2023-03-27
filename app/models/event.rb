@@ -4,7 +4,10 @@ class Event < ApplicationRecord
   validates :title, presence: true
   validates :date, presence: true
 
+  after_create :event_send
   def event_send
-    UserMailer.event_email(self).deliver_now
+    User.all.each do |user|
+    UserMailer.event_email(user,self).deliver_now
+    end
   end
 end
