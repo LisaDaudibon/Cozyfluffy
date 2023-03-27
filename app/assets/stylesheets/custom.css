@@ -105,7 +105,7 @@
   background-color: #FAD9D7 !important;
 }
 
-body {
+main {
   margin: 0;
   font-family: var(--bs-body-font-family);
   font-size: var(--bs-body-font-size);
@@ -187,13 +187,6 @@ body {
   color: white;
 }
 
-.cat-picture {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 180px;
-}
-
 .cats-pictures-container {
   align-items: center; 
   justify-content: center;
@@ -207,7 +200,7 @@ html {
   height:100%;
 }
 
-body {
+main {
   min-height:100%;
   margin:0;
   display: table;
@@ -218,15 +211,8 @@ footer {
   height: 65px;
 }
 
-body > footer {
+main > footer {
    display: table-row;
-}
-
-.cats-title-home {
-  display: flex;
-  background: white;
-  color: #A57164;
-  justify-content: center;
 }
 
 .cats-container {

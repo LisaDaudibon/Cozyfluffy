@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   def update
     @gategory = Category.find(params[:id])
     if @category.update(category_params)
-      flash[:success] = "La catégorie a bien été modifié !"
+      flash[:success] = "La catégorie a bien été modifiée !"
       redirect_to admin_index_path(:id)
     else
       flash[:danger] = "Erreur : ton formulaire n'était pas correct. "
@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category.find = Category.find(params[:id])
     @category.destroy
-    flash[:success] = "La categorie a été supprimé avec succès !"
+    flash[:success] = "La categorie a été supprimée avec succès !"
     redirect_to root_path
   end
 

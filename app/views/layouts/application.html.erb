@@ -27,13 +27,14 @@
     margin-bottom: 20px;
   }
   </style>
+  <body>
   <header>
     <%= render 'layouts/navbar' %>
   </header>
 
-  <body>
+  <main>
       <%= yield %>
-  </body>
+  </main>
 
   <footer id="footer">
     <%=render 'layouts/footer'%>
@@ -48,4 +49,5 @@
   slidesToScroll: 2
 });
   </script>
+  </body>
 </html>

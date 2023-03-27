@@ -45,7 +45,7 @@
   --bs-danger: #ff7851;
   --bs-light: #f8f9fa;
   --bs-dark: #343a40;
-  --bs-primary-rgb: 120, 194, 173;
+  --bs-primary-rgb: 165, 113, 100;
   --bs-secondary-rgb: 243, 150, 154;
   --bs-success-rgb: 86, 204, 157;
   --bs-info-rgb: 108, 195, 213;
@@ -121,7 +121,6 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
   line-height: 1.2;
-  color: #5a5a5a;
 }
 
 h1, .h1 {
