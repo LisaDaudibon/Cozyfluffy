@@ -1,16 +1,14 @@
 
 <div class="container">
-
   <div class="my-form">
     <%= form_with model: @product, url: products_path do |f| %>
     <h2>Ajoute un élément au menu</h2>
-    
 
     <div class= "text-primary"><%=flash[:error] if flash[:error].present?%>
-    <br>
-    <% if @product.errors.any? %>
-      <%= @product.errors.full_messages%>
-    <% end %>
+      <br>
+      <% if @product.errors.any? %>
+        <%= @product.errors.full_messages%>
+      <% end %>
     </div>
 
     <div class="field">
@@ -24,8 +22,13 @@
     </div>
 
     <div class="form-check">
-          <%= collection_radio_buttons(:product, :category_id, Category.all, :id, :name)%> <br>
-    </div>
+      <%= collection_radio_buttons(:product, :category_id, Category.all, :id, :name) do |b|%>
+        <div>
+          <%= b.label(class: "radio_button") { b.radio_button(class: "radio_button") }%>
+          <%= b.object.name %>
+        </div>
+      <% end %>
+    </div><br>
 
     <div class="actions">
       <%= f.submit "Confirmer", class:"btn btn-primary"  %>
