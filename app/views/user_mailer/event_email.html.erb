@@ -108,7 +108,6 @@
 <body style="background-color: #a76551; margin: 50px;">
   <div class="container" >
   <div class="preheader" style="display: none; max-width: 0; max-height: 0; overflow: hidden; font-size: 1px; line-height: 1px; color: #D4A693; opacity: 0;">
-    A preheader is the short summary text that follows the subject line when an email is viewed in the inbox.
   </div>
 
   <table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -147,10 +146,10 @@
 
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color:#a76551;">
-              <p style="margin: 0;">Un nouvel evenement à était ajouté </p>
+              <p style="margin: 0;">Un nouvel événement à était ajouté <%=@user.pseudo%></p>
               <p style="margin: 0;"></p>
-              <p style="margin: 0;">evenement: <%=Event.last%></p>
-              <p style="margin: 0;">description: <%=Event.last.description%></p><br>
+              <p style="margin: 0;">événement: <%=@event.title%></p>
+              <p style="margin: 0;">description: <%=@event.description%></p><br>
             </td>
           </tr>
 
