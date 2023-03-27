@@ -1,4 +1,6 @@
 class AssociationController < ApplicationController
+  before_action :is_admin?, only: %i[ new create edit update destroy ]
+
   def index
     @events = Event.all
   end

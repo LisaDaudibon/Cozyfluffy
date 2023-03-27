@@ -1,4 +1,6 @@
 class CatsController < ApplicationController
+  before_action :is_admin?, only: %i[ new create edit update destroy ]
+  
   def index
     @cats = Cat.all
     @catsresidents = Cat.where(adoption: false)

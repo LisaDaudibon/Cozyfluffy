@@ -1,24 +1,45 @@
 
 <br>
-<div class="container text-primary text-center justify-content-center bg-light ">
-  <h3>MENU</h3>
+<div class="container text-primary justify-content-center bg-light">
+  <div class="row row-cols-1 text-center p-1">
+    <div class="col-sm-1 text-start g-0 ">
+      <%= link_to "< Retour", home_index_path, class:"btn btn-primary btn-sm" %>
+    </div>
+    <div class="col-sm-11 text-center">
+      <h3>MENU</h3>
+    </div>
+  </div>
 </div>
 
-<div class="container text-center bg-dark py-4 px-7 align-items-center">
+<div class="container bg-dark py-4 px-7 align-items-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
     <% @categories.each do |category| %>
       <div class="col">
         <div class="card border-primary mb-3" style="max-width: 18rem;">
-          <div class="card-header text-white bg-primary" style="max-width: 18rem;"><h5><%= category.name %></h5></div>
+          <div class="card-header text-white bg-primary text-center" style="max-width: 18rem;"><h5><%= category.name %></h5></div>
           <% @products.each do |product| %>
             <% if product.category.id === category.id %>
               <%if product.id.even?%>
                 <div class="card-body bg-light">
-                  <p class="card-text"><%= product.name%></p>
+                  <div class="row">
+                    <div class="col">
+                      <div class="card-text"><%= product.name%></div>
+                    </div>
+                    <div class="col">
+                      <div class="card-text text-end"><%= product.price%> €</div>
+                    </div>
+                  </div>
                 </div>
               <% else %>
                 <div class="card-body g-2">
-                  <p class="card-text"><%= product.name%></p>
+                  <div class="row">
+                    <div class="col">
+                      <div class="card-text text-start"><%= product.name%></div>
+                    </div>
+                    <div class="col">
+                      <div class="card-text text-end"><%= product.price%> €</div>
+                    </div>
+                  </div>
                 </div>
               <% end %>
             <% end %>
@@ -26,6 +47,11 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="row row-cols-1">
+    <div class="col text-center">
+    <%= link_to "< Retour", home_index_path, class:"btn btn-primary" %>
+    </div>
   </div>
 </div>
 <br>

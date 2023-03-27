@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :is_admin?
+
   def new
     @product = Product.new
   end
