@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :is_admin?
+  
   def create
     @category = Category.new(category_params)
     if @category.save
