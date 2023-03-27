@@ -15,39 +15,16 @@
     <%= javascript_tag %>
   </head>
 
-  <style>
-  .my-form {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: white;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  </style>
-  <body>
   <header>
     <%= render 'layouts/navbar' %>
   </header>
 
-  <main>
-      <%= yield %>
-  </main>
+  <body>
+    <%= yield %>
+  </body>
 
-  <footer id="footer">
+  <footer>
     <%=render 'layouts/footer'%>
   </footer>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script type="text/javascript">
-    $('.slider').slick({
-  infinite: true,
-  slidesToShow: 2,
-  slidesToScroll: 2
-});
-  </script>
-  </body>
 </html>
