@@ -29,7 +29,12 @@
       <div class="container-row">
         <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
       </div>
+      <%= form_for @cat, method: :delete do |f| %>
+      <%= f.submit 'Supprimer', class:"btn btn-primary"%>
+      <% end %>
       <%end%>
+   
+
   </div>
    
 </div>
