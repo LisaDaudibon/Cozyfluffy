@@ -1,56 +1,71 @@
-<div class="container">
+
 <br>
-<h3>Dashbord Admin</h3>
+<div class="container text-primary text-center justify-content-center bg-light">
+  <h3>DASHBOARD ADMIN</h3>
+</div>
 
-<div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Utilisateurs</h5>
-        <p class="card-text"><br>
-          <%= link_to "Voir les utilisateurs", admin_index_path, class:"btn btn-info" %>
-          <br>
-          <%= button_to "Ajouter un utilisateur", new_admin_path, class:"btn btn-primary" %>
+<br>
+
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card border-primary">
+        <h5 class="card-header text-white text-center bg-info">Utilisateurs</h5>
+        <div class="card-body">
+          <p class="card-text text-center ">
+            <%= link_to "Voir les utilisateurs", admin_index_path, class:"btn btn-success" %>
+            <br>
+            <div class="d-flex gap-2 justify-content-center">
+              <%= button_to "Ajouter un utilisateur", new_admin_path, class:"btn btn-primary" %>
+            </div>
           </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-primary">
+        <h5 class="card-header text-white text-center bg-info"><i class="fa fa-paw fa-lg"></i>  Chats</h5>
+        <div class="card-body">
+          <p class="card-text text-center">
+            <%= link_to "Voir les chats", cats_path, class:"btn btn-outline-success" %>
+            <br>
+            <div class="d-flex gap-2 justify-content-center">
+              <%= button_to "Ajouter un chat", new_cat_path, class:"btn btn-outline-primary" %>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-primary">
+        <h5 class="card-header text-white text-center bg-info">Produits</h5>
+        <div class="card-body">
+          <p class="card-text text-center">
+            <%= link_to "Voir le menu", menu_index_path, class:"btn btn-success" %>
+            <br>
+            <div class="d-flex gap-2 justify-content-center">
+              <%= button_to "Ajouter un produit", new_product_path, class:"btn btn-primary" %>
+              <%= button_to "Ajouter une catégorie", new_product_path, class:"btn btn-primary" %>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card border-primary">
+        <h5 class="card-header text-white text-center bg-info">Evénements</h5>
+        <div class="card-body">
+          <p class="card-text text-center">
+            <%= link_to "Voir la page association", association_index_path, class:"btn btn-outline-success" %>
+            <br>
+            <div class="d-flex gap-2 justify-content-center">
+              <%= button_to "Ajouter un évènement", new_association_path, class:"btn btn-outline-primary" %>
+            </div>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fa fa-paw fa-lg"></i> Chats</h5>
-        <p class="card-text"><br>
-          <%= link_to "Voir les chats", cats_path, class:"btn btn-info" %>
-          <br>
-          <%= button_to "Ajouter un chat", new_cat_path, class:"btn btn-primary" %>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Produits</h5>
-        <p class="card-text"><br>
-          <%= link_to "Voir le menu", menu_index_path, class:"btn btn-info" %>
-          <br>
-          <%= button_to "Ajouter un produit", new_menu_path, class:"btn btn-primary" %>
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Evènements</h5>
-        <p class="card-text"><br>
-          <%= link_to "Voir la page association", association_index_path, class:"btn btn-info" %>
-          <br>
-          <%= button_to "Ajouter un évènement", new_association_path, class:"btn btn-primary" %>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 </div>
 
+<br>
