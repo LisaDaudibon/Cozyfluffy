@@ -1,10 +1,10 @@
-<h1>Menu#new</h1>
+
 <div class="container">
 
   <div class="my-form">
-    <%= form_with model: @product, url: menu_index_path do |f| %>
+    <%= form_with model: @product, url: products_path do |f| %>
     <h2>Ajoute un élément au menu</h2>
-    <%= f.hidden_field :category_id, value: "1" %>
+    
 
     <div class= "text-primary"><%=flash[:error] if flash[:error].present?%>
     <br>
@@ -14,13 +14,17 @@
     </div>
 
     <div class="field">
-      <%= f.label :name %><br />
+      <%= f.label :nom %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "nom", class:"form-control"  %>
     </div>
 
     <div class="field">
-      <%= f.label :price %><br />
-      <%= f.number_field :price, autocomplete: "prix", class:"form-control"  %>
+      <%= f.label :prix %><br />
+      <%= f.number_field :price, autocomplete: "prix", class:"form-control"  %> <br>
+    </div>
+
+    <div class="form-check">
+          <%= collection_radio_buttons(:product, :category_id, Category.all, :id, :name)%> <br>
     </div>
 
     <div class="actions">
