@@ -1,0 +1,13 @@
+<div class="container mt-5">
+      <%= month_calendar(events: @events) do |date, events| %>
+        <%= date.day %>
+
+        <% events.each do |event| %>
+          <div class ="card-header">
+            <div class ="card-title">
+            <%= event.title %>
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+</div>
