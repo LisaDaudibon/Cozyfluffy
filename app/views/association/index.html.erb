@@ -1,34 +1,53 @@
 <style>
 .asso-container{
   margin: 20px;
-  /* background: url('https://images.unsplash.com/photo-1571570703598-39eb580a0329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80') center center; */
+  position: center;
+}
+
+#map {
+  width: 400px; 
+  height: 300px; 
+  border-radius: 10px;
 }
 </style>
 
-<div class="asso-container">
-  <div class="p-4 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-4">
-      <h4 class="display-8 fw-bold">Qui sommes-nous ?</h4>
-      <p>L'association Cozy & Fluffy a été fondée en Janvier 2023, elle est composée et gérée par Lisa (présidente), Karine (vice-présidente), Chandara (trésorière) et Suzanne (secrétaire). 
-      </p>
-      <p>Mais Cozy & Fluffy est désormais plus qu'une association à but non lucratif, c'est aussi un salon de thé qui sert également de refuge aux chats abandonnés. Les fonds récoltés au salon servent à faire fonctionner le café et l'association. Nous proposons également des évènements et activités tout au long de l'année !
-      </p>
-      <button class="btn btn-primary" type="button">Devenir bénévole</button>
-      <button class="btn btn-info" type="button">Faire un don</button>
+<div class="row">
+  <div class="col">
+    <div class="asso-container">
+      <div class="p-4 mb-4 bg-light rounded-3">
+        <h4>Qui sommes-nous ?</h4><br>
+        <p>L'association Cozy & Fluffy a été fondée en Janvier 2023, elle est composée et gérée par Lisa (présidente), Karine (vice-présidente), Chandara (trésorière) et Suzanne (secrétaire). 
+        <br><br>
+        Mais Cozy & Fluffy est désormais plus qu'une association à but non lucratif, c'est aussi un salon de thé qui sert également de refuge aux chats abandonnés. Les fonds récoltés au salon servent à faire fonctionner le café et l'association. Nous proposons également des évènements et activités tout au long de l'année !
+        <br><br>
+        </p>
+        <button class="btn btn-primary" type="button">Devenir bénévole</button>
+        <button class="btn btn-info" type="button">Faire un don</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="asso-container">
+      <div class="p-4 mb-4 bg-light rounded-3">
+        <h4>Où nous trouver ?</h4>
+        <div id="map"></div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container-fluid">
-  <h3>Les évènements :</h3><br>
-  <div class="list-group">
-    <% @events.each do |event| %>
-      <a href="/association/<%= event.id %>/" class="list-group-item list-group-item-action">
-        <h5><%= event.title %></h5>
-        Date: <%= event.date.strftime('%d/%m/%Y') %>
-      </a>
-    <% end %>
+<div class="asso-container">
+  <div class="p-4 mb-4 bg-light rounded-3">
+    <h4>Les prochains évènements :</h4><br>
+      <div class="list-group">
+        <% @events.each do |event| %>
+          <a href="/association/<%= event.id %>/" class="list-group-item list-group-item-action">
+            <h5><%= event.title %></h5>
+            Date: <%= event.date.strftime('%d/%m/%Y') %>
+          </a>
+        <% end %>
+      </div>
+      <br>
+    <a class="btn btn-info" href="/association/new" role="button">Ajouter un évènement</a>
   </div>
-  <br>
-  <a class="btn btn-info btn-lg" href="/association/new" role="button">Ajouter un évènement</a>
 </div>
