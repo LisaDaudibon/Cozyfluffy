@@ -1,10 +1,41 @@
+<style>
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.home-content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+
+.home-features {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+</style>
 <header>
   <%= render 'jumbotron' %>
 </header>
 <br>
 <body>
-  <%= render 'cats' %>
-  <br>
-  <%= render 'salon' %>
-  <br>
+  <div class="home-container">
+    <div class="home-content">
+      <%= render 'cats'%>
+      <br>
+      <%= render 'salon'%>
+      <br>
+    </div>
+    <div class="home-features">
+      <h3 class="text-dark text-center justify-content-center bg-light ">Events</h3>
+      <%= render 'infos'%>
+      <button class="btn btn-primary" style="width: 600px" type="button" href="https://buy.stripe.com/test_28o5l74W32xxcko000">Faire un don</button>
+    </div>
+  </div>
 </body>

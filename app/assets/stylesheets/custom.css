@@ -95,6 +95,7 @@ body {
   background: url('https://scontent.fmel8-1.fna.fbcdn.net/v/t1.6435-9/188845091_323679679116612_7339041646934366641_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=YjJxdxtmuisAX_4pN5o&_nc_ht=scontent.fmel8-1.fna&oh=00_AfCJBQrflx6Fmmwub2rZoA3GJsGJp2mLnAcT_NWtujmOJg&oe=64425DD1') center center;
   background-size: cover;
   background-position: center;
+  max-height : 90%;
 }
 
 .button {
@@ -137,7 +138,7 @@ body {
   width: 100%; 
 }
 
-footer {
+.footer {
   height: 65px;
 }
 
