@@ -26,7 +26,11 @@
                       <div class="card-text"><%= product.name%></div>
                     </div>
                     <div class="col">
-                      <div class="card-text text-end"><%= product.price%> €</div>
+                      <div class="card-text text-end"><%= product.price%> €
+                        <% if current_user&.is_admin? %>
+                          <a class="btn btn-primary btn-sm" href="/products/<%= params[:id] %>/edit" role="button">Modifier</a>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -37,7 +41,11 @@
                       <div class="card-text text-start"><%= product.name%></div>
                     </div>
                     <div class="col">
-                      <div class="card-text text-end"><%= product.price%> €</div>
+                      <div class="card-text text-end"><%= product.price%> €
+                        <% if current_user&.is_admin? %>
+                          <a class="btn btn-primary btn-sm" href="/products/<%= params[:id] %>/edit" role="button">Modifier</a>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -1,2 +1,30 @@
-<h1>Menu#edit</h1>
-<p>Find me in app/views/menu/edit.html.erb</p>
+<div class="container-fluid">
+  <br>
+  <div class="my-form">
+    <h4>Modifier un produit</h4><br>
+    <%= form_with model: @event, url: association_path do |f| %>
+      <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+      <div class="form-group">
+        <label>Nom</label>
+        <%= f.text_field :name, autocomplete: "prix", class: 'form-control' %>
+      </div>
+      <br>
+      <div class="form-group">
+        <%= f.label :Prix %><br />
+        <%= f.number_field :price, autocomplete: "prix", class:"form-control"  %> <br>
+      </div>
+      <br>
+      <div class="form-check">
+      <%= collection_radio_buttons(:product, :category_id, Category.all, :id, :name) do |b|%>
+        <div>
+          <%= b.label(class: "radio_button") { b.radio_button(class: "radio_button") }%>
+          <%= b.object.name %>
+        </div>
+      <% end %>
+    </div><br>
+      <div class="form-group">
+        <button type="submit" class='btn btn-success'>Enregistrer</button>
+      </div>
+    <% end %>
+  </div>
+</div>
