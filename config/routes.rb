@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/index'
   devise_for :users
 
   devise_scope :user do
@@ -7,7 +8,10 @@ Rails.application.routes.draw do
 
   root "home#index"
   get "home/index"
-  resources :admin, only: %i[index new create] 
+  resources :admin, only: %i[index new create]
+  namespace :admin do
+    resources :users, only: [:index]
+  end
   resources :cats
   resources :association
   resources :menu, only: %i[index]
