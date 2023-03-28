@@ -2,18 +2,25 @@
 <html>
   <head>
     <title>Cozy & Fluffy</title>
+    <%# --- Meta info --- %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= favicon_link_tag asset_path('cozy.ico') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# --- CSS stylesheets (bootstrap, bootswatch and custom) --- %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'bootstrap'%>
     <%= stylesheet_link_tag 'custom'%>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <%= javascript_tag %>
+
+    <%# --- Font awesome icons --- %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/1fc3880b90.js" crossorigin="anonymous"></script>
-    <%= javascript_tag %>
+
+    <%# --- Mapbox API --- %>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
   </head>
 
   <header>
@@ -25,7 +32,15 @@
   </body>
 
   <footer>
-    <%=render 'layouts/footer'%>
+    <%= render 'layouts/footer' %>
   </footer>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1Ijoic3V6aXdhbiIsImEiOiJjbGZzNWIxbmgwMndrM2lzZWE0aWkyb3NoIn0.G3uwUOP4d9-lX-5KhUaWNw';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+</script>
 
 </html>
