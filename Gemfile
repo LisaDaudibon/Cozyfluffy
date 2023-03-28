@@ -85,3 +85,4 @@ gem 'dotenv-rails'
 gem 'table_print'
 gem 'devise'
 gem 'rspec'
+gem "simple_calendar", "~> 2.4"
