@@ -21,10 +21,10 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    
+
     if @product.update(product_params)
       flash[:success] = "Le produit a bien été modifié !"
-      redirect_to admin_index_path(:id)
+      redirect_to menu_index_path
     else
       flash[:danger] = "Erreur : ton formulaire n'était pas correct. "
       render 'edit', status: :unprocessable_entity
@@ -32,10 +32,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.find = Product.find(params[:id])
+    @product = Product.find(params[:id])
     @product.destroy
     flash[:success] = "Le produit a été supprimé avec succès !"
-    redirect_to root_path
+    redirect_to menu_index_path
   end
 
   private
