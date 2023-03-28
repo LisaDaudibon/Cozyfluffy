@@ -24,26 +24,36 @@
                   <div class="row">
                     <div class="col">
                       <div class="card-text"><%= product.name%></div>
+                        <% if current_user&.is_admin? %>
+                          <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
+                        <% end %>
                     </div>
                     <div class="col">
                       <div class="card-text text-end"><%= product.price%> €
                         <% if current_user&.is_admin? %>
-                          <a class="btn btn-primary btn-sm" href="/products/<%= params[:id] %>/edit" role="button">Modifier</a>
+                          <%= form_for product, method: :delete do |f| %>
+                            <%= f.submit 'X', class:"btn btn-danger btn-sm"%>
+                          <% end %>
                         <% end %>
                       </div>
                     </div>
                   </div>
                 </div>
               <% else %>
-                <div class="card-body g-2">
+                <div class="card-body">
                   <div class="row">
                     <div class="col">
                       <div class="card-text text-start"><%= product.name%></div>
+                        <% if current_user&.is_admin? %>
+                          <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"> <i class="fa-solid fa-pen"></i> </a>
+                        <% end %>
                     </div>
                     <div class="col">
                       <div class="card-text text-end"><%= product.price%> €
                         <% if current_user&.is_admin? %>
-                          <a class="btn btn-primary btn-sm" href="/products/<%= params[:id] %>/edit" role="button">Modifier</a>
+                          <%= form_for product, method: :delete do |f| %>
+                            <%= f.submit 'X', class:"btn btn-danger btn-sm"%>
+                          <% end %>
                         <% end %>
                       </div>
                     </div>

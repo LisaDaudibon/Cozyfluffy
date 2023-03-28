@@ -2,7 +2,7 @@
   <br>
   <div class="my-form">
     <h4>Modifier un produit</h4><br>
-    <%= form_with model: @event, url: association_path do |f| %>
+    <%= form_with model: @product, url: product_path do |f| %>
       <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
         <label>Nom</label>
