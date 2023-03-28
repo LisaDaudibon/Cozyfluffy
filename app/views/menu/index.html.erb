@@ -3,7 +3,7 @@
 <div class="container text-primary justify-content-center bg-light">
   <div class="row row-cols-1 text-center p-1">
     <div class="col-sm-1 text-start g-0 ">
-      <%= link_to "< Retour", home_index_path, class:"btn btn-primary btn-sm" %>
+      <a class="btn btn-primary btn-sm" href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
     <div class="col-sm-11 text-center">
       <h3>MENU</h3>
@@ -32,7 +32,9 @@
                       <div class="card-text text-end"><%= product.price%> €
                         <% if current_user&.is_admin? %>
                           <%= form_for product, method: :delete do |f| %>
-                            <%= f.submit 'X', class:"btn btn-danger btn-sm"%>
+                            <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                                <i class="fa-solid fa-trash"></i>
+                            <% end %>
                           <% end %>
                         <% end %>
                       </div>
@@ -52,7 +54,9 @@
                       <div class="card-text text-end"><%= product.price%> €
                         <% if current_user&.is_admin? %>
                           <%= form_for product, method: :delete do |f| %>
-                            <%= f.submit 'X', class:"btn btn-danger btn-sm"%>
+                            <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                                <i class="fa-solid fa-trash"></i>
+                            <% end %>
                           <% end %>
                         <% end %>
                       </div>
@@ -67,8 +71,8 @@
     <% end %>
   </div>
   <div class="row row-cols-1">
-    <div class="col text-center">
-    <%= link_to "< Retour", home_index_path, class:"btn btn-primary" %>
+    <div class="col text-start">
+      <a class="btn btn-primary btn-sm" href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
   </div>
 </div>

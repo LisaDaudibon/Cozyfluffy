@@ -1,0 +1,41 @@
+
+<br>
+<div class="container text-primary justify-content-center bg-light">
+  <div class="row row-cols-1 text-center p-1">
+    <div class="col-sm-1 text-start g-0 ">
+      <a class="btn btn-sm", style="background-color: #DC985F;"  href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="col-sm-11 text-center">
+      <h3>NOS UTILISATEURS</h3>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container bg-dark py-4 px-7 align-items-center">
+    <div class="bs-component">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Pseudo</th>
+            <th scope="col">Statut </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr class="table-active">
+                <td><%= user.email %></td>
+                <td><%= user.pseudo %></td>
+                <% if user.is_admin  == true%>
+                  <td>Admin</td>
+                <% else %>
+                  <td> Utilisateur</td>
+                <% end %>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
