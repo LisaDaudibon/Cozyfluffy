@@ -28,15 +28,12 @@
     <h3 class="cats-title-home">Nos chats résidents</h3>
       <% @catsresidents.each do |cat| %>
         <div class="cat-box">
-          <div id="cat-picture" style="width: 590px">
-            <img
-              class="img-thumbnail"
-              src="<%= cat.image_url %>"
-            />
-          </div>
-          <div class="card" style="height: 150px">
+          <div class="card">
             <div class="card-body text-center">
               <h5 id="card-title"><strong><%= cat.name%></strong></h5>
+               <div id="cat-picture" style="width: 450px">
+                <img class="img-thumbnail"src="<%= cat.image_url %>"/>
+              </div>
               <p class="card-text">
                 <%= cat.description %>
                 <br>
@@ -54,12 +51,6 @@
     <div class="d-flex">
       <% @catsadoptables.each do |cat| %>
         <div class="cat-box">
-          <div id="cat-picture" style="width: 590px">
-            <img
-              class="img-thumbnail"
-              src="<%= cat.image_url %>"
-            />
-          </div>
           <div class="card" style="height: 150px; width: 590px">
             <div class="card-body text-center">
               <h5 id="card-title"><strong><%= cat.name%></strong></h5>
