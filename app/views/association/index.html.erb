@@ -19,8 +19,15 @@
   </div>
 </div>
 
+<div class="container rounded text-primary justify-content-center bg-light">
+  <div class="row row-cols-1 p-1">
+      <h3>LES EVENEMENTS</h3>
+  </div>
+</div>
+
+<br>
+
 <div class="container-fluid">
-  <h3>Les évènements :</h3><br>
   <div class="list-group">
     <% @events.each do |event| %>
       <a href="/association/<%= event.id %>/" class="list-group-item list-group-item-action">
@@ -32,3 +39,4 @@
   <br>
   <a class="btn btn-info btn-lg" href="/association/new" role="button">Ajouter un évènement</a>
 </div>
+<br>
