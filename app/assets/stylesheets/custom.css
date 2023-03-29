@@ -147,21 +147,8 @@ body > footer {
 
 .cats-container {
   display: grid;
-  grid-template-columns: 40rem 70rem;
+  grid-template-columns: 1fr 2fr;
   grid-gap: 20px;
-}
-
-.cats-residents {
-  grid-column: 1;
-  flex-wrap: wrap;
-}
-
-.cats-visitors {
-  grid-column: 2;
-}
-
-.cat-img {
-  width: 60%;
 }
 
 .my-form {
