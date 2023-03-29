@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="my-form">
+    <%= form_with model: @category, url: categories_path do |f| %>
+    <h2>Ajoute une catégorie au menu</h2>
+
+    <div class= "text-primary"><%=flash[:error] if flash[:error].present?%>
+      <br>
+      <% if @category.errors.any? %>
+        <%= @category.errors.full_messages%>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :nom %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "nom", class:"form-control"  %>
+    </div>
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Confirmer", class:"btn btn-primary"  %>
+    </div>
+    <% end %>
+  </div>
+</div>
