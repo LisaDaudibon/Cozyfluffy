@@ -1,6 +1,6 @@
 
 <br>
-<div class="container text-primary justify-content-center bg-light">
+<div class="container rounded text-primary justify-content-center bg-light">
   <div class="row row-cols-1 text-center p-1">
     <div class="col-sm-1 text-start g-0 ">
       <a class="btn btn-sm", style="background-color: #DC985F;"  href="/cats/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
@@ -14,17 +14,15 @@
 
 <div class="row">
 
-  <div class="cat-img col">
-    <img
-      class="w-100"
-      src="<%= @cat.image_url %>"
-    />
-  </div>
-
   <div class="my-form col" style="float: right">
     <h5 class="card-title"><strong><%= @cat.name%></strong></h5>
       <p class="card-text">
         <br>
+        <div class="text-center">
+            <img class="border border-5 border-primary rounded" style="max-width:65%;"
+              src="<%= @cat.image_url %>">
+        </div>
+        
         <strong>Nom :</strong>
         <%= @cat.name %><br>
         <strong>Date de naissance : </strong>
@@ -40,12 +38,16 @@
       </p>
 
       <% if current_user%>
-      <div class="container-row">
-        <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
+      <div class="row">
+        <div class="col">
+          <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
+        </div>
+        <div class="col text-end">
+          <%= form_for @cat, method: :delete do |f| %>
+          <%= f.submit 'Supprimer', class:"btn btn-primary"%>
+          <% end %>
+        </div>
       </div>
-      <%= form_for @cat, method: :delete do |f| %>
-      <%= f.submit 'Supprimer', class:"btn btn-primary"%>
-      <% end %>
       <%end%>
    
 
