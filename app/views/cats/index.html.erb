@@ -1,4 +1,11 @@
+<style>
+.cats-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
 
+
+</style>
 
 <br>
 <div class="container">
@@ -14,37 +21,70 @@
     </div>
       
 
-  <div class="container rounded-bottom bg-dark py-7 px-7 align-items-center">
-    <div class="row row-cols-2">
-      <div class="col">
-       <div class="card border-primary border border-3">
-          <div class="card-body bg-light rounded">
+  <div class=" cats-container rounded-bottom bg-dark py-7 px-7 align-items-center text-center">
+    <div class="row cats-residents">
+      <div class="row col-3 ">
+       
           <% @catsresidents.each do |cat| %>
+        <div class="card">
+          <div class="card-body bg-light rounded " style="max-width:550px">
+            <div class="card-header rounded rounded-0 bg-primary text-center" style="color: #ebb181;"><h5><strong><%= cat.name %></strong></h5></div>
+              <div class="cat-box">
+                <div class="card">
+                  <div class="card-body text-center">
+                      <div id="cat-picture" style="width: 450px">
+                      <img class="img-thumbnail"src="<%= cat.image_url %>"/>
+                    </div>
+                    <h5 id="card-title"><strong><%= cat.name%></strong></h5>
+                    <p class="card-text">
+                      <%= cat.description %>
+                      <br>
+                    </p>
+                    <div id="card-btn">
+                      <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+             </div>
+        </div>    
+            <% end %>
+
+
+      
+      </div>      
+
+      <div class="row col-6">
+          <% @catsadoptables.each do |cat| %>
+          <div class="card text-center" style="max-width:550px;">
+          <div class="card-body bg-light rounded" style="max-width:500px;">
+
             <div class="card-header rounded rounded-0 bg-primary text-center" style="color: #ebb181;"><h5><strong><%= cat.name %></strong></h5></div>
 
             <div class="cat-box">
               <div class="card">
                 <div class="card-body text-center">
-                    <div id="cat-picture" style="width: 500px">
+                    <div id="cat-picture" style="width: 450px">
                     <img class="img-thumbnail"src="<%= cat.image_url %>"/>
                   </div>
                   <h5 id="card-title"><strong><%= cat.name%></strong></h5>
-                  <p class="card-text">
-                    <%= cat.description %>
-                    <br>
-                  </p>
-                  <div id="card-btn">
-                    <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
-                  </div>
+                      <p class="card-text">
+                        <%= cat.description %>
+                        <br>
+                      </p>
+                      <div id="card-btn">
+                        <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
+                      </div>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
+          </div>
+        <% end %>
+      </div>
+              
 
+      
 
-        </div>
-      </div>    
-    </div>      
-  </div>
 </div>
 <br>
