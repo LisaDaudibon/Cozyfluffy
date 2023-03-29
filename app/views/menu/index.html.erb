@@ -1,32 +1,32 @@
 
 <br>
-<div class="container rounded text-primary justify-content-center bg-light">
+<div class="container rounded-top text-primary justify-content-center bg-light">
+
   <div class="row row-cols-1 text-center p-1">
     <div class="col-sm-1 text-start g-0 ">
-      <a class="btn btn-primary btn-sm" href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
+      <a class="btn btn-sm" href="/" role="button" style="color: #ebb181;"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
     <div class="col-sm-11 text-center">
       <h3>MENU</h3>
     </div>
   </div>
 </div>
-
-<div class="container rounded bg-dark py-4 px-7 align-items-center">
+<div class="container rounded-bottom bg-dark py-4 px-7 align-items-center">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
     <% @categories.each do |category| %>
       <div class="col">
-        <div class="card border-primary mb-3" style="max-width: 18rem;">
-          <div class="card-header text-white bg-primary text-center" style="max-width: 18rem;"><h5><%= category.name %></h5></div>
+        <div class="card border-primary mb-3 border border-3" style="max-width: 18rem;">
+          <div class="card-header rounded rounded-0 bg-primary text-center" style="max-width: 18rem; color: #ebb181;"><h5><strong><%= category.name %></strong></h5></div>
           <% @products.each do |product| %>
             <% if product.category.id === category.id %>
               <%if product.id.even?%>
-                <div class="card-body bg-light">
+                <div class="card-body bg-light rounded">
                   <div class="row">
                     <div class="col">
                       <div class="card-text"><%= product.name%></div>
-                        <% if current_user&.is_admin? %>
-                          <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
-                        <% end %>
+                      <% if current_user&.is_admin? %>
+                        <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
+                      <% end %>
                     </div>
                     <div class="col">
                       <div class="card-text text-end"><%= product.price%> €
@@ -70,10 +70,10 @@
       </div>
     <% end %>
   </div>
-  <div class="row row-cols-1">
-    <div class="col text-start">
-      <a class="btn btn-primary btn-sm" href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
+  <% if current_user&.is_admin? %>
+    <div class="d-flex gap-2 justify-content-center">
+      <%= button_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
     </div>
-  </div>
+  <% end %>
 </div>
 <br>
