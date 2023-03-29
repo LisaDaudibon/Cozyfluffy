@@ -1,12 +1,12 @@
 
-<br>
+<br> 
 <div class="container rounded-top text-primary justify-content-center bg-light">
 
   <div class="row row-cols-1 text-center p-1">
     <div class="col-sm-1 text-start g-0 ">
-      <a class="btn btn-sm" href="/" role="button" style="color: #ebb181;"><i class="fa-solid fa-arrow-left"></i></a>
+      <a class="btn", style="background-color: #DC985F;"  href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
-    <div class="col-sm-11 text-center">
+    <div class="col-sm-10">
       <h3>MENU</h3>
     </div>
   </div>
@@ -75,5 +75,15 @@
       <%= button_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
     </div>
   <% end %>
+</div>
+<br>
+<div class="container">
+  <div class="rounded-top">
+    <h3 class="text-center bg-light">BRUNCH</h3>
+  </div>
+  <div class="rounded-bottom bg-dark py-4 px-7 align-items-center">
+    <a><%= button_to "Offrir une carte cadeau pour un brunch",  checkout_brunch_path(total: 30), class: "btn btn-primary", remote: true %></a>
+    <a><%= button_to "Faire une donation",  checkout_donation_path, class: "btn btn-primary", remote: true %></a>
+  </div>
 </div>
 <br>

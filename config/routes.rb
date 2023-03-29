@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   resources :menu, only: %i[index]
   resources :categories, only: %i[new create edit update destroy]
   resources :products, only: %i[new create edit update destroy]
+
+  scope '/checkout' do
+    post 'brunch', to: 'checkout#brunch', as: 'checkout_brunch'
+    post 'donation', to: 'checkout#donation', as: 'checkout_donation'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+  end
 end
