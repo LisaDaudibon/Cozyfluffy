@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   root "home#index"
   get "home/index"
-  resources :admin, only: %i[index new create]
+  resources :admin, only: %i[index new create edit update destroy]
   namespace :admin do
-    resources :users, only: [:index]
+    resources :users, only: %i[index destroy]
   end
   resources :cats
   resources :association
