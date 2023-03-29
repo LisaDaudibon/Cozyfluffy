@@ -36,11 +36,49 @@
   </footer>
 
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic3V6aXdhbiIsImEiOiJjbGZzNWIxbmgwMndrM2lzZWE0aWkyb3NoIn0.G3uwUOP4d9-lX-5KhUaWNw';
+  mapboxgl.accessToken='pk.eyJ1Ijoic3V6aXdhbiIsImEiOiJjbGZzNWIxbmgwMndrM2lzZWE0aWkyb3NoIn0.G3uwUOP4d9-lX-5KhUaWNw';
+  
+  const geojson = {
+    'type': 'FeatureCollection',
+    'features': [
+      {
+        'type': 'Feature',
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [2.3460802773507288,48.85301276408764]
+        },
+        'properties': {
+          'title': 'Cozy & Fluffy',
+          'description': 'Rue du Chat Qui Pêche, 75005 Paris, France'
+        }
+      }
+    ]
+  };
+  
   var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [2.346327,48.853501],
+    zoom: 15,
   });
+
+  // add markers to map
+  for (const feature of geojson.features) {
+      // create a HTML element for each feature
+      const el = document.createElement('div');
+      el.className = 'marker';
+
+      // make a marker for each feature and add it to the map
+      new mapboxgl.Marker(el)
+        .setLngLat(feature.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML(
+              `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+            )
+        )
+        .addTo(map);
+      }
 </script>
 
 </html>
