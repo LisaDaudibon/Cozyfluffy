@@ -16,7 +16,16 @@
     <% @categories.each do |category| %>
       <div class="col">
         <div class="card border-primary mb-3 border border-3" style="max-width: 18rem;">
-          <div class="card-header rounded rounded-0 bg-primary text-center" style="max-width: 18rem; color: #ebb181;"><h5><strong><%= category.name %></strong></h5></div>
+          <div class="card-header rounded rounded-0 bg-primary text-center" style="max-width: 18rem; color: #ebb181;">
+            <h5><strong><%= category.name %></strong></h5>
+            <% if current_user&.is_admin? %>
+              <%= form_for category, method: :delete do |f| %>
+                <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                  <i class="fa-solid fa-trash"></i>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
           <% @products.each do |product| %>
             <% if product.category.id === category.id %>
               <%if product.id.even?%>
