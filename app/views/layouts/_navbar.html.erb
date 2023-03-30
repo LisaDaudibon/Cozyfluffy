@@ -2,36 +2,36 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <div class="d-flex">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="/association">Association</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/cats">Chats</a>
-            </li>
-          </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/association">Association</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cats">Chats</a>
+          </li>
+        </ul>
         <div class="navbar-brand">
           <a class="nav-link" href="/"><strong>COZY <%= image_tag "cozy.png", class:"logo", style:"width: 80px" %> FLUFFY </strong></a>
         </div>
         <% if current_user %>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                  <a class="nav-link" href="/menu">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/admin"><i class="fa-solid fa-gear"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/signout"><i class="fa-solid fa-right-to-bracket"></i></a>
-              </li>
-            </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin"><i class="fa-solid fa-gear"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signout"><i class="fa-solid fa-right-to-bracket"></i></a>
+            </li>
+          </ul>
         <% else %>
           <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/menu">Menu</a>
+              <a class="nav-link" href="/menu">Menu</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/users/sign_in">Admin <i class="fa-solid fa-gear"></i></a>
+              <a class="nav-link" href="/users/sign_in">Admin</a>
             </li>
           </ul>
         <% end %>
