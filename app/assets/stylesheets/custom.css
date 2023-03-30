@@ -191,8 +191,3 @@ body > footer {
   grid-row-start: 1;
   grid-row-end: 4;
 }
-
-.asso-container {
-  margin: 20px;
-  position: center;
-}
