@@ -1,3 +1,5 @@
+
+
 .text-color-pink {
   color: #FAD9D7;
 }
@@ -148,9 +150,15 @@ body > footer {
 
 .cats-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
+@media screen and (max-width: 768px) {
+  .cats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .my-form {
   border: 1px solid #ccc;
