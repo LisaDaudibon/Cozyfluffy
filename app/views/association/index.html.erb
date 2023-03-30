@@ -35,8 +35,8 @@
         <p>L'association Cozy & Fluffy a été fondée en Janvier 2023, elle est composée et gérée par Lisa (présidente), Karine (vice-présidente), Chandara (trésorière) et Suzanne (secrétaire).<br><br> 
         Mais Cozy & Fluffy est désormais plus qu'une association à but non lucratif, c'est aussi un salon de thé qui sert également de refuge aux chats abandonnés. Les fonds récoltés au salon servent à faire fonctionner le café et l'association.<br><br> 
         Nous proposons également des évènements et activités tout au long de l'année !<br><br></p>
-        <button class="btn btn-primary" type="button">Devenir bénévole</button>
-        <button class="btn btn-info" type="button">Faire un don</button>
+        <a class="btn btn-primary" type="button">Devenir bénévole</a>
+        <a class="btn btn-info" type="button" href="/checkout/donation">Faire un don</a>
       </div>
     </div>
     <div class="col">
@@ -61,6 +61,10 @@
         <% end %>
       </div>
       <br>
-    <a class="btn btn-info" href="/association/new" role="button">Ajouter un évènement</a>
+      <% if current_user&.is_admin? %>
+        <div class="d-flex gap-2">
+          <a class="btn btn-info" href="/association/new" role="button">Ajouter un évènement</a>
+        </div>
+      <% end %>
   </div>
 </div>
