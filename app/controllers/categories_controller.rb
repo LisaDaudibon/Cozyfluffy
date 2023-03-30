@@ -1,6 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :is_admin?
   
+  def new
+    @category = Category.new
+  end 
+
   def create
     @category = Category.new(category_params)
     if @category.save
@@ -16,7 +20,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @gategory = Category.find(params[:id])
+    @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:success] = "La catégorie a bien été modifiée !"
       redirect_to admin_index_path(:id)
@@ -27,10 +31,10 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category.find = Category.find(params[:id])
+    @category = Category.find(params[:id])
     @category.destroy
     flash[:success] = "La categorie a été supprimée avec succès !"
-    redirect_to root_path
+    redirect_to admin_index_path
   end
 
   private

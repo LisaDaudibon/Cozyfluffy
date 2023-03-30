@@ -1,0 +1,15 @@
+<div class="container col-6-md bg-light">
+  <div class="o">
+      <%= month_calendar(events: @events) do |date, events| %>
+        <%= date.day %>
+       <div class ="card-header">
+        <% events.each do |event| %>
+            <div class ="card-title"> 
+            <a href="/association/<%= event.id %>/" class="list-group-item list-group-item-action">
+            <%= event.title %>
+          </div> 
+          </div>
+        <% end %>
+      <% end %>
+  </div>    
+</div>
