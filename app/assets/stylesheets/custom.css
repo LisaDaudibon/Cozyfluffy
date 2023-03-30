@@ -171,3 +171,28 @@ body > footer {
 .content-wrap {
   padding-bottom: 2.5rem;   
 }
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.home-content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.home-features {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.asso-container {
+  margin: 20px;
+  position: center;
+}
