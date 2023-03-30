@@ -4,26 +4,35 @@
   @media (min-width: 768px) {
     .cats-container {
       grid-template-columns: auto auto;
+
     }
+  }
+  .cats-container{
+    justify-content: center;
   }
 
   .card {
     height: 100%;
     max-height: 750px;
-    width: 100%;
+
+
   }
 
-  .card-body {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
+ .card-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 
   .card-img-top {
     width: 100%;
     height: 375px;
     max-width: 550px;
     object-fit: cover;
+    
   }
 </style>
 
@@ -39,22 +48,21 @@
     </div>
   </div>
 </div>
-<>
+
 <div class="cats-container rounded-bottom bg-dark py-7 px-7 text-center">
-  <div class="row ">
-    <div class="col-lg-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 md-4">
     <div class="row">
       <% @catsresidents.each do |cat| %>
       <div class="card mb-4 h-100">
-        <div class="card-body bg-light rounded">
-          <div class="card-header rounded rounded-0 bg-primary text-center" style="color: #ebb181;">
             <h5><strong><%= cat.name %></strong></h5>
-          </div>
+      
+        <div class="card-body bg-light rounded">
           <img class="img-fluid img-thumbnail" style="width:100% ; height:375px ; max-width:550px" src="<%= cat.image_url %>"/>
           <div class="card-text flex-grow-1">
             <%= truncate(cat.description, length: 150) %>
           </div>
-          <div class="card-footer text-center">
+          <div class=" text-center">
             <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
           </div>
         </div>
@@ -67,22 +75,23 @@
       <div class="row">
         <% @catsadoptables.each do |cat| %>
         <div class="col-md-6 mb-4">
+        
           <div class="card h-100">
-            <div class="card-body bg-light rounded">
-              <div class="card-header rounded rounded-0 bg-primary text-center" style="color: #ebb181;">
                 <h5><strong><%= cat.name %></strong></h5>
-              </div>
-              <img class="img-fluid img-thumbnail" style="width:100% ; height:375px ; max-width:550px" src="<%= cat.image_url %>"/>
+              
+            <div class="card-body bg-light rounded">
+              <%= image_tag cat.image_url, class: "card-img-top img-fluid" %>
 
               <div class="card-text flex-grow-1">
                 <%= truncate(cat.description, length: 150) %>
               </div>
-              <div class="card-footer text-center">
-                <%= link_to "Voir notre minou", cat, class:"btn btn-primary" %>
+              <div class="text-center">
+                <%= link_to "Voir notre minou", cat, class:"btn btn-primary"%>
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        
         <% end %>
       </div>
     </div>
