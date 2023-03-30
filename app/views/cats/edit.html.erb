@@ -3,32 +3,30 @@
 <div class="my-form">
   <%= form_with(model: @cat, url: cat_path) do |f| %>
     <h2>Mise à jour du profil</h2>
-
+    <br>
     <div class="field">
       <%= f.label :nom %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "nom", class:"form-control"  %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.label :date_de_naissance %><br/>
       <%= f.date_field :birth_date, autocomplete: "date", class:"form-control"  %>
     </div>
-
+    <br>
     <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description, autocomplete: "description", class:"form-control"  %>
+      <%= f.label :description %><br />
+      <%= f.text_field :description, autocomplete: "description", class:"form-control"  %>
     </div>
-
+    <br>
     <div class="field">
-    <p>
-      <%= f.label :disponible_adoption? %>
+      <%= f.label :disponible_pour_adoption? %>
       <%= f.check_box :adoption %>
-    </p>
     </div>
-
-    <%= form_for @cat, method: :patch do |f| %>
-      <%= f.submit 'Actualiser', class:"btn btn-primary"%>
-    <% end %>
-
+    <div class="text-center">
+      <%= form_for @cat, method: :patch do |f| %>
+        <%= f.submit 'Actualiser', class:"btn btn-primary"%>
+      <% end %>
+    </div>
   <% end %>
 </div>
