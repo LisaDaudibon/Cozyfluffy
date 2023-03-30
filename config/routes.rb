@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: %i[index destroy]
   end
-  resources :cats
+  resources :cats do
+    resources :adoptions, only: %i[new create]
+  end
   resources :association
   resources :menu, only: %i[index]
   resources :categories, only: %i[new create edit update destroy]
