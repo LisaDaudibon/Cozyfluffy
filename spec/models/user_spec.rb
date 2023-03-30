@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'date'
 
 RSpec.describe User, type: :model do
   before do 
@@ -7,19 +6,19 @@ RSpec.describe User, type: :model do
   end
 
   describe 'fields validation' do
-    it 'needs title' do
-      expect { User.create!(pseudo: nil, user:@user, date: DateTime.now) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Title can't be blank")
+    it 'needs email' do
+      expect { User.create!(pseudo: "John", email: nil, password:"123456") }
+        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email can't be blank")
     end
 
-    it 'needs date' do
-      expect { Event.create!(title: "bonjour", user:@user, date: nil) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Date can't be blank")
+    it 'needs password' do
+      expect { User.create!(pseudo: "John", email: "valentin@yopmail.com", password:nil, password_confirmation:nil) }
+        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Password can't be blank")
     end
 
-    it 'needs user' do
-      expect { Event.create!(title: "bonjour", user: nil, date: DateTime.now) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: User must exist")
+    it 'needs email to be unique' do
+      expect { User.create!(pseudo: "John", email: "lisa@yopmail.com", password:"123456") }
+        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email has already been taken")
     end
   end
 end
