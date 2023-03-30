@@ -24,6 +24,7 @@
   <%= render 'jumbotron' %>
 </header>
 <br>
+
 <body>
   <div class="home-container">
     <div class="home-content">
@@ -33,9 +34,13 @@
       <br>
     </div>
     <div class="home-features">
-      <h3 class="text-dark text-center justify-content-center bg-light ">Events</h3>
+      <h3 class="container rounded text-dark text-center justify-content-center bg-light ">Events</h3>
+      <%= render 'calendar'%>
+      <br>
+
       <%= render 'infos'%>
-      <button class="btn btn-primary" style="width: 600px" type="button" href="https://buy.stripe.com/test_28o5l74W32xxcko000">Faire un don</button>
+      <button class="btn btn-primary" style="width: 600px" type="button" href="/checkout/donation">Faire un don</button>
     </div>
   </div>
+
 </body>

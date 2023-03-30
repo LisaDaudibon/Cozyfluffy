@@ -1,6 +1,6 @@
 
 <br>
-<div class="container text-primary justify-content-center bg-light">
+<div class="container rounded text-primary justify-content-center bg-light">
   <div class="row row-cols-1 text-center p-1">
     <div class="col-sm-1 text-start g-0 ">
       <a class="btn", style="background-color: #DC985F;"  href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
@@ -12,7 +12,7 @@
 </div>
 <br>
 
-<div class="container">
+<div class="container rounded">
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
       <div class="card border-primary">
@@ -50,8 +50,8 @@
             <%= link_to "Voir le menu", menu_index_path, class:"btn", style:"background-color: #DC985F;" %>
             <br>
             <div class="d-flex gap-2 justify-content-center">
-              <%= button_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
-              <%= link_to "Ajouter une catégorie", new_product_path, class:"btn", style:"background-color: #a76551;" %>
+              <%= link_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
+              <%= link_to "Ajouter une catégorie", new_category_path, class:"btn", style:"background-color: #a76551;" %>
             </div>
           </p>
         </div>
