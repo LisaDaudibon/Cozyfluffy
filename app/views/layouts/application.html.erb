@@ -36,7 +36,7 @@
   </footer>
 
 <script>
-  mapboxgl.accessToken = 'pk.eyJ1Ijoic3V6aXdhbiIsImEiOiJjbGZzNWIxbmgwMndrM2lzZWE0aWkyb3NoIn0.G3uwUOP4d9-lX-5KhUaWNw';
+  mapboxgl.accessToken = "<%= ENV['MAPBOX_ACCESS_TOKEN']%>";
   
   const geojson = {
     'type': 'FeatureCollection',
