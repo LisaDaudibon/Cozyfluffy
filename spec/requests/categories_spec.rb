@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "/categories", type: :request do
-  
+
   # This should return the minimal set of attributes required to create a valid
   # Category. As you add validations to Category, be sure to
   # adjust the attributes here as well.
@@ -74,7 +74,7 @@ RSpec.describe "/categories", type: :request do
         category = Category.create! valid_attributes
         patch category_url(category), params: { category: new_attributes }
         category.reload
-        expect(response).to redirect_to(category_url(category))
+        expect(response).to redirect_to(menu_index_path)
       end
     end
 
@@ -100,7 +100,7 @@ RSpec.describe "/categories", type: :request do
     it "redirects to the categories list" do
       category = Category.create! valid_attributes
       delete category_url(category)
-      expect(response).to redirect_to(categories_url)
+      expect(response).to redirect_to(menu_index_url)
     end
   end
 end
