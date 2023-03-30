@@ -61,6 +61,10 @@
         <% end %>
       </div>
       <br>
-    <a class="btn btn-info" href="/association/new" role="button">Ajouter un évènement</a>
+      <% if current_user&.is_admin? %>
+        <div class="d-flex gap-2">
+          <a class="btn btn-info" href="/association/new" role="button">Ajouter un évènement</a>
+        </div>
+      <% end %>
   </div>
 </div>
