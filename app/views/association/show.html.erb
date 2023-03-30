@@ -12,13 +12,25 @@
 <div class="container-fluid">
   <br>
   <div class="my-box">
+    <a class="btn btn-sm", style="background-color: #DC985F;"  href="/association" role="button"><i class="fa-solid fa-arrow-left"></i></a>
     <p><h4><%= @event.title %></h4><br>
-      <strong>Date: </strong><%= @event.date.strftime('%d/%m/%Y') %><br><br>
-      <strong>Description:<br> </strong><%= @event.description %><br><br>
-      <a class="btn btn-primary btn-lg" href="/association/<%= params[:id] %>/edit" role="button">Modifier</a>
+      <strong>Date : </strong><%= @event.date.strftime('%d/%m/%Y') %><br><br>
+      <strong>Description :<br> </strong><%= @event.description %><br><br>
+      <strong>Créé par :<br> </strong><%= @user.pseudo %>
     </p>
-    <div class="col-sm-1 text-start g-0 ">
-      <a class="btn btn-sm", style="background-color: #DC985F;"  href="/association" role="button"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="row">
+      <div class="col">
+        <% if current_user&.is_admin? %>
+          <a class="btn btn-info btn-sm" href="/association/<%= params[:id] %>/edit" role="button"> <i class="fa-solid fa-pen"></i></a>
+      </div>
+      <div class="col text-end">
+          <%= form_for @event, url: association_path, method: :delete do |f| %>
+            <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                <i class="fa-solid fa-trash"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
   <br>

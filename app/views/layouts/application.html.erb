@@ -2,18 +2,27 @@
 <html>
   <head>
     <title>Cozy & Fluffy</title>
+    <%# --- Meta info --- %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= favicon_link_tag asset_path('cozy.ico') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# --- CSS stylesheets (bootstrap, bootswatch and custom) --- %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'bootstrap'%>
     <%= stylesheet_link_tag 'custom'%>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <%= javascript_tag %>
+
+    <%# --- Font awesome icons --- %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/1fc3880b90.js" crossorigin="anonymous"></script>
-    <%= javascript_tag %>
+
+    <%# --- Mapbox API --- %>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+    <%# --- Stripe API --- %>
     <script src="https://js.stripe.com/v3/"></script>
   </head>
 
@@ -26,7 +35,53 @@
   </body>
 
   <footer>
-    <%=render 'layouts/footer'%>
+    <%= render 'layouts/footer' %>
   </footer>
+
+<script>
+  mapboxgl.accessToken = "<%= ENV['MAPBOX_ACCESS_TOKEN']%>";
+  
+  const geojson = {
+    'type': 'FeatureCollection',
+    'features': [
+      {
+        'type': 'Feature',
+        'geometry': {
+          'type': 'Point',
+          'coordinates': [2.3460802773507288,48.85301276408764]
+        },
+        'properties': {
+          'title': 'Cozy & Fluffy',
+          'description': 'Rue du Chat Qui Pêche, 75005 Paris, France'
+        }
+      }
+    ]
+  };
+  
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [2.346327,48.853501],
+    zoom: 15,
+  });
+
+  // add markers to map
+  for (const feature of geojson.features) {
+      // create a HTML element for each feature
+      const el = document.createElement('div');
+      el.className = 'marker';
+
+      // make a marker for each feature and add it to the map
+      new mapboxgl.Marker(el)
+        .setLngLat(feature.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML(
+              `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+            )
+        )
+        .addTo(map);
+      }
+</script>
 
 </html>

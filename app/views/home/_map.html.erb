@@ -1,0 +1,35 @@
+<style>
+#map {
+  width: 350px; 
+  height: 300px; 
+  border-radius: 10px;
+  position: center;
+}
+
+.marker {
+  background-image: url(<%= asset_path 'marker-patoune.png' %>);
+  background-size: cover;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 150px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+</style>
+
+<h3 class="container rounded text-primary text-center justify-content-center bg-light ">Adresse</h3>
+
+<div class="p-4 mb-4 bg-light rounded-3">
+    <div id="map"></div>
+    <div class="text-center p-2"> Rue du Chat Qui Pêche <br>
+    75005 Paris, France</div>
+</div>

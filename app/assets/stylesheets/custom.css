@@ -1,3 +1,5 @@
+
+
 .text-color-pink {
   color: #FAD9D7;
 }
@@ -138,7 +140,7 @@ body {
   width: 100%; 
 }
 
-.footer {
+footer {
   height: 65px;
 }
 
@@ -148,9 +150,15 @@ body > footer {
 
 .cats-container {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
+@media screen and (max-width: 768px) {
+  .cats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 .my-form {
   border: 1px solid #ccc;
@@ -170,4 +178,24 @@ body > footer {
 
 .content-wrap {
   padding-bottom: 2.5rem;   
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.home-content {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.home-features {
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 4;
 }
