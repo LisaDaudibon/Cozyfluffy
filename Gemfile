@@ -63,6 +63,14 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'nyan-cat-formatter'
 end
 
 group :development do
@@ -81,10 +89,8 @@ group :production do
   gem "pg", "~> 1.1"
 end
 
-gem 'faker'
 gem 'dotenv-rails'
 gem 'table_print'
 gem 'devise'
-gem 'rspec'
 gem "simple_calendar", "~> 2.4"
 gem 'stripe'
