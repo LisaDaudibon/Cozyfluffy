@@ -1,14 +1,14 @@
 require 'rails_helper'
 require 'date'
 
-RSpec.describe Event, type: :model do
+RSpec.describe User, type: :model do
   before do 
     @user = User.create(pseudo: "John", email: "lisa@yopmail.com", password:"123456")
   end
 
   describe 'fields validation' do
     it 'needs title' do
-      expect { Event.create!(title: nil, user:@user, date: DateTime.now) }
+      expect { User.create!(pseudo: nil, user:@user, date: DateTime.now) }
         .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Title can't be blank")
     end
 
