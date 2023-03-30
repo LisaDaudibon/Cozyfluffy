@@ -1,60 +1,47 @@
-
-<br>
-<div class="container rounded text-primary justify-content-center bg-light">
-  <div class="row row-cols-1 text-center p-1">
-    <div class="col-sm-1 text-start g-0 ">
+<div class="container-fluid">
+  <div class="row">
+    <div class="my-form col" style="float: right">
       <a class="btn btn-sm", style="background-color: #DC985F;"  href="/cats/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
-    </div>
-    <div class="col-sm-11 text-center">
-      <h3> NOS CHATS </h3>
-    </div>
-  </div>
-</div>
-<br>
-
-<div class="row">
-
-  <div class="my-form col" style="float: right">
-    <h5 class="card-title"><strong><%= @cat.name%></strong></h5>
+      <h3 class="card-title text-center"><strong><%= @cat.name %></strong></h3>
+      <div class="text-center">
+        <br>
+        <img class="border border-5 border-primary rounded" style="max-width:65%;"
+          src="<%= @cat.image_url %>">
+      </div>
       <p class="card-text">
         <br>
-        <div class="text-center">
-            <img class="border border-5 border-primary rounded" style="max-width:65%;"
-              src="<%= @cat.image_url %>">
-        </div>
-        
-        <strong>Nom :</strong>
-        <%= @cat.name %><br>
         <strong>Date de naissance : </strong>
         <%= @cat.birth_date.strftime('%d/%m/%Y') %><br>
         <strong>Description :</strong>
         <%= @cat.description %><br>
-        <strong>Adoption :</strong>
+        <strong>Disponible à l'adoption :</strong>
         <% if @cat.adoption == false %>
           <a>Non</a><br>
         <% else %>
           <a>Oui</a>
         <% end %>
       </p>
-
-      <% if current_user%>
       <div class="row">
-        <div class="col">
-          <%= link_to "Mettre à jour", edit_cat_path, class:"btn btn-primary" %>
-        </div>
-        <div class="col text-end">
-          <%= form_for @cat, method: :delete do |f| %>
-          <%= f.submit 'Supprimer', class:"btn btn-primary"%>
+        <% if current_user&.is_admin? %>
+          <div class="col">
+            <a class="btn btn-info btn-sm" href="/cats/<%= params[:id] %>/edit" role="button"> <i class="fa-solid fa-pen"></i></a>
+          </div>
+          <div class="col text-end">
+            <%= form_for @cat, method: :delete do |f| %>
+              <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+            <% end %>
+          </div>
+        <% else %>
+          <% if @cat.adoption? %>
+            <div class="col">
+              Tu souhaiterais adopter ce minou ? Rempli ce formulaire d'intérêt : 
+              <%= link_to raw("<i class=\"fa-solid fa-file\"></i>"), new_cat_adoption_path(@cat), class:"btn btn-primary" %>
+            </div>
           <% end %>
-        </div>
+        <% end %>
       </div>
-      <% else %>
-        <div class="col">
-          <%= link_to "Formulaire", new_cat_adoption_path(:cat_id), class:"btn btn-primary" %>
-        </div>
-      <% end %>
-   
-
+    </div>
   </div>
-   
 </div>
