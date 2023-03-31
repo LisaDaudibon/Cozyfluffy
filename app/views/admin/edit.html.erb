@@ -1,32 +1,34 @@
-
 <div class="container-fluid">
   <br>
   <div class="my-form">
     <h4>Modifier un utilisateur</h4><br>
-    <%= form_with model: @admin, url: admin_path do |f| %>
+    <%= form_with model: @user, url: admin_path do |f| %>
       <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
-        <label>Email</label>
-        <%= f.text_field :email, autocomplete: "emain", class: 'form-control' %>
+        <label>Pseudo</label>
+        <%= f.text_field :pseudo, autocomplete: "pseudo", class: 'form-control' %>
       </div>
-
+      <br>
+      <div class="form-group">
+        <label>Email</label>
+        <%= f.text_field :email, autocomplete: "email", class: 'form-control' %>
+      </div>
+      <br>
       <div class="field">
-        <%= f.label :password %><br/>
+        <%= f.label :mot_de_passe %><br/>
         <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
       </div>
-
+      <br>
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :confirmation_mot_de_passe %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
       </div>
-
+      <br>
       <div class="field">
         <%= f.label :admin %>
         <%= f.check_box :is_admin %>
       </div>
-
       <br>
-
       <div class="form-group">
         <button type="submit" class='btn btn-success'>Enregistrer</button>
       </div>
