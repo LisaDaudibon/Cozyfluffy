@@ -1,45 +1,51 @@
-<div class="container rounded text-primary text-center justify-content-center bg-light ">
-  <h3>Le salon</h3>
-</div>
+<h3 class="rounded text-center" style="background-color:#ebb181; color:#ffffff;">Le salon</h3>
 
-<div class="container rounded text-center bg-dark py-4 px-10 ">
+<div class="container-fluid rounded bg-dark py-4 px-10">
   <div class="row">
     <div class="col">
-      <img
-        class="img-thumbnail" width="50%"
-        src="https://media.timeout.com/images/105325462/1536/864/image.jpg"
-      />
-      <p class="rounded mt-2 bg-light"> Le salon associatif Cozy & Fluffy vous accueille dans une ambiance chaleureuse, où vous pourrez déguster nos boissons et encas tout en profitant de la compagnie de nos chats.
-      </p>
+      <div class="row">
+        <div class="col-lg-7">
+          <img class="img-thumbnail" 
+          src="https://media.timeout.com/images/105325462/1536/864/image.jpg"/>
+        </div>
+        <div class="col-lg-5">
+          <div class="rounded p-3 mb-2 bg-light text-center" style="max-height:500px">
+              Le salon associatif <strong>Cozy & Fluffy</strong> vous accueille dans une ambiance chaleureuse, où vous pourrez déguster nos boissons et encas tout en profitant de la compagnie de nos chats.
+              <br><br>
+              <%= link_to "En savoir plus", association_index_path, class:"btn btn-info" %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row d-flex justify-items-center">
+  
+  <div class="row d-flex justify-items-center pt-4">
     <div class="col">
-      <img
-        class="img-thumbnail" width="300px"
-        src="https://i0.wp.com/pintade-montpellier.com/wp-content/uploads/2020/02/hygge-cafe-montpellier-7.jpg"
-      />
+      <img class="img-fluid img-thumbnail"
+        src="https://images.unsplash.com/photo-1634291090914-98d1a914c34e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"/>
+      <div class="text-center">
+        <strong>Pâtisseries</strong>
+      </div>
     </div>
     <div class="col">
-      <img
-        class="img-thumbnail" width="340px"
-        src="https://cdn.sortiraparis.com/images/1001/97624/736988-le-cafe-vert-du-printemps-haussmann.jpg"
-      />
+      <img class="img-fluid img-thumbnail"
+        src="https://images.unsplash.com/photo-1514481538271-cf9f99627ab4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+      <div class="text-center">
+        <strong>Boissons</strong>
+      </div>
     </div>
     <div class="col">
-      <img
-        class="img-thumbnail" width="300px"
-        src="https://lilleaddict.fr/wordpress/wp-content/uploads/2019/10/70072849_482638532590892_8402032775004902387_n-600x450.jpg"
-      />
+      <img class="img-fluid img-thumbnail"
+        src="https://images.unsplash.com/photo-1574783756547-258b3c720fe9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+      <div class="text-center">
+        <strong>Brunch</strong>
+      </div>
     </div>
   </div>
-
   <br>
-
   <div class="row">
-    <div class="col">
-      <%= link_to "Voir notre carte", menu_index_path, class:"btn btn-primary " %>
+    <div class="col text-center">
+      <%= link_to "Voir notre menu", menu_index_path, class:"btn btn-primary " %>
     </div>
   </div>
 </div>
-
