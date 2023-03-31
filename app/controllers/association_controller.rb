@@ -19,7 +19,7 @@ class AssociationController < ApplicationController
     @event.user = User.first
     
     if @event.save
-      redirect_to root_path
+      redirect_to association_index_path
     else
       render :new
     end
