@@ -1,4 +1,5 @@
 class AdoptionsController < ApplicationController
+before_action :find_cat
 
   def new
     @adoption_form = AdoptionForm.new
@@ -7,7 +8,7 @@ class AdoptionsController < ApplicationController
 
   def create
     @adoption_form = AdoptionForm.new(adoption_params)
-    @adoption_form.cat = find_cat
+    @cat = Cat.find(params[:cat_id])
 
     if @adoption_form.save
       redirect_to root_path
@@ -22,6 +23,6 @@ class AdoptionsController < ApplicationController
   end
 
   def find_cat
-    Cat.find(params[:cat_id])
+  @cat = Cat.find(params[:cat_id])
   end
 end

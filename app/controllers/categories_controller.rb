@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     if @category.update(category_params)
       flash[:success] = "La catégorie a bien été modifiée !"
-      redirect_to admin_index_path(:id)
+      redirect_to menu_index_path
     else
       flash[:danger] = "Erreur : ton formulaire n'était pas correct. "
       render 'edit', status: :unprocessable_entity

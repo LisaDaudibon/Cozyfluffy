@@ -19,18 +19,18 @@
       <strong>Créé par :<br> </strong><%= @user.pseudo %>
     </p>
     <div class="row">
-      <div class="col">
-        <% if current_user&.is_admin? %>
+      <% if current_user&.is_admin? %>
+        <div class="col">
           <a class="btn btn-info btn-sm" href="/association/<%= params[:id] %>/edit" role="button"> <i class="fa-solid fa-pen"></i></a>
-      </div>
-      <div class="col text-end">
+        </div>
+        <div class="col text-end">
           <%= form_for @event, url: association_path, method: :delete do |f| %>
             <%= f.button nil, class: "btn btn-danger btn-sm" do %>
-                <i class="fa-solid fa-trash"></i>
+              <i class="fa-solid fa-trash"></i>
             <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
   <br>

@@ -2,7 +2,7 @@
 
 <div class="my-form">
   <%= form_with(model: @adoption_form, url: cat_adoptions_path) do |f| %>
-    <h2>Formulaire d'intérêt à l'adoption</h2>
+    <h2>Formulaire d'intérêt à l'adoption de <%= @cat.name %> </h2>
 
     <div class="field">
       <%= f.label :prénom %><br />

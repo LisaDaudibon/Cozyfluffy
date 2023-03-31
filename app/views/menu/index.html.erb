@@ -1,7 +1,6 @@
 
 <br> 
 <div class="container rounded-top text-primary justify-content-center bg-light">
-
   <div class="row row-cols-1 text-center p-1">
     <div class="col-sm-1 text-start g-0 ">
       <a class="btn", style="background-color: #DC985F;"  href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
@@ -18,13 +17,16 @@
         <div class="card border-primary mb-3 border border-3" style="max-width: 18rem;">
           <div class="card-header rounded rounded-0 bg-primary text-center" style="max-width: 18rem; color: #ebb181;">
             <h5><strong><%= category.name %></strong></h5>
-            <% if current_user&.is_admin? %>
-              <%= form_for category, method: :delete do |f| %>
-                <%= f.button nil, class: "btn btn-danger btn-sm" do %>
-                  <i class="fa-solid fa-trash"></i>
+            <div class="d-flex justify-content-center">
+              <% if current_user&.is_admin? %>
+                <a class="btn btn-info btn-sm" href="/categories/<%= category.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
+                <%= form_for category, method: :delete do |f| %>
+                  <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
                 <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
           <% @products.each do |product| %>
             <% if product.category.id === category.id %>
@@ -92,15 +94,15 @@
       <h3>BRUNCH</h3>
   </div>
 </div>
-  <div class="container rounded-bottom bg-dark py-4 px-7 text-center">
-    <h5>Tous les dimanches de 11h à 15h</h5>
-    <div>Une boisson chaude et une boisson froide au choix</div>
-    <div>Une viennoiserie</div>
-    <div>Plat sucré au choix : pancakes, granola avec fruits de saison, açaï bowl</div>
-    <div>Plat salé au choix : oeufs brouillés et bacon, avocado toast et saumon, pâtes à la truffe </div>
-    <div>Morceau de cake au choix</div>
-    <br><br>
-    <a><%= button_to "Offrir une carte cadeau pour un brunch",  checkout_brunch_path(total: 30), class: "btn btn-primary", remote: true %></a>
-  </div>
-
+<div class="container rounded-bottom bg-dark py-4 px-7 text-center">
+  <h5>Tous les dimanches de 11h à 15h</h5>
+  <div>Une boisson chaude et une boisson froide au choix</div>
+  <div>Une viennoiserie</div>
+  <div><em>Les plats ci-dessous ne sont disponible uniquement lors du brunch hebdomadaire</em></div>
+  <div>Plat sucré au choix : pancakes, granola avec fruits de saison, açaï bowl</div>
+  <div>Plat salé au choix : oeufs brouillés et bacon, avocado toast et saumon, pâtes à la truffe </div>
+  <div>Morceau de cake au choix</div>
+  <br><br>
+  <%= button_to "Offrir une carte cadeau pour un brunch",  checkout_brunch_path(total: 30), class: "btn btn-primary", remote: true %>
+</div>
 <br>
