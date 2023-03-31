@@ -83,7 +83,7 @@
   </div>
   <% if current_user&.is_admin? %>
     <div class="d-flex gap-2 justify-content-center">
-      <%= button_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
+      <%= link_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
     </div>
   <% end %>
 </div>
