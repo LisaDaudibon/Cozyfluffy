@@ -8,7 +8,7 @@ before_action :find_cat
 
   def create
     @adoption_form = AdoptionForm.new(adoption_params)
-    @cat = Cat.find(params[:cat_id])
+    @adoption_form.cat = find_cat
 
     if @adoption_form.save
       redirect_to root_path
@@ -23,6 +23,6 @@ before_action :find_cat
   end
 
   def find_cat
-  @cat = Cat.find(params[:cat_id])
+    @cat = Cat.find(params[:cat_id])
   end
 end
