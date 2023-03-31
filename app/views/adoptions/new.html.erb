@@ -2,30 +2,30 @@
 
 <div class="my-form">
   <%= form_with(model: @adoption_form, url: cat_adoptions_path) do |f| %>
-    <h2>Formulaire d'intérêt à l'adoption de <%= @cat.name %> </h2>
+    <h2 class="text-center">Formulaire d'intérêt à l'adoption <br> de <%= @cat.name %> </h2>
 
     <div class="field">
       <%= f.label :prénom %><br />
       <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:"form-control" %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.label :nom %><br />
       <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control" %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
     </div>
-
+    <br>
     <div class="field">
       <%= f.label :téléphone %><br/>
       <%= f.number_field :phone_number, autocomplete: "phone_number", class:"form-control" %>
     </div>
     <br>
-    <div class="actions">
-      <%= f.submit "Confirmer", class:"btn btn-primary"  %>
+    <div class="actions text-center">
+      <%= f.submit "Confirmer", class:"btn btn-primary" %>
     </div>
   <% end %>
 </div>

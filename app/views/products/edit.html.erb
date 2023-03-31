@@ -1,7 +1,6 @@
 <div class="container-fluid">
-  <br>
   <div class="my-form">
-    <h4>Modifier un produit</h4><br>
+    <h4 class="text-center">Modifier un produit</h4>
     <%= form_with model: @product, url: product_path do |f| %>
       <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
@@ -13,16 +12,15 @@
         <%= f.label :Prix %><br />
         <%= f.number_field :price, autocomplete: "prix", class:"form-control"  %> <br>
       </div>
-      <br>
       <div class="form-check">
-      <%= collection_radio_buttons(:product, :category_id, Category.all, :id, :name) do |b|%>
-        <div>
-          <%= b.label(class: "radio_button") { b.radio_button(class: "radio_button") }%>
-          <%= b.object.name %>
-        </div>
-      <% end %>
-    </div><br>
-      <div class="form-group">
+        <%= collection_radio_buttons(:product, :category_id, Category.all, :id, :name) do |b|%>
+          <div>
+            <%= b.label(class: "radio_button") { b.radio_button(class: "radio_button") }%>
+            <%= b.object.name %>
+          </div>
+        <% end %>
+      </div>
+      <div class="form-group text-center">
         <button type="submit" class='btn btn-success'>Enregistrer</button>
       </div>
     <% end %>

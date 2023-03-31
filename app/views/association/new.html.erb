@@ -4,7 +4,7 @@
     <%= @event.errors.full_messages %>
   <% end %>
   <div class="my-form">
-    <h4>Créer un nouvel évènement</h4><br>
+    <h4 class="text-center">Créer un nouvel évènement</h4><br>
     <%= form_with model: @event, url: association_index_path do |f| %>
       <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
@@ -22,7 +22,7 @@
         <%= f.date_field :date, class: 'form-control' %>
       </div>
       <br>
-      <div class="form-group">
+      <div class="form-group text-center">
         <button type="submit" class='btn btn-success'>Enregistrer</button>
       </div>
     <% end %>

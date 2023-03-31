@@ -19,9 +19,9 @@
             <h5><strong><%= category.name %></strong></h5>
             <div class="d-flex justify-content-center">
               <% if current_user&.is_admin? %>
-                <a class="btn btn-info btn-sm" href="/categories/<%= category.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
+                <a class="btn btn-info btn-sm m-1" href="/categories/<%= category.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
                 <%= form_for category, method: :delete do |f| %>
-                  <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                  <%= f.button nil, class: "btn btn-danger btn-sm m-1" do %>
                     <i class="fa-solid fa-trash"></i>
                   <% end %>
                 <% end %>
@@ -36,14 +36,14 @@
                     <div class="col-8">
                       <div class="card-text"><%= product.name%></div>
                       <% if current_user&.is_admin? %>
-                        <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
+                        <a class="btn btn-info btn-sm m-1" href="/products/<%= product.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
                       <% end %>
                     </div>
                     <div class="col-4">
-                      <div class="card-text text-end"><%= product.price%> €
+                      <div class="card-text text-end"><%= ('%.2f' % product.price) %> € 
                         <% if current_user&.is_admin? %>
                           <%= form_for product, method: :delete do |f| %>
-                            <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                            <%= f.button nil, class: "btn btn-danger btn-sm m-1" do %>
                                 <i class="fa-solid fa-trash"></i>
                             <% end %>
                           <% end %>
@@ -58,14 +58,14 @@
                     <div class="col-8">
                       <div class="card-text text-start"><%= product.name%></div>
                         <% if current_user&.is_admin? %>
-                          <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"> <i class="fa-solid fa-pen"></i> </a>
+                          <a class="btn btn-info btn-sm m-1" href="/products/<%= product.id %>/edit" role="button"> <i class="fa-solid fa-pen"></i> </a>
                         <% end %>
                     </div>
                     <div class="col-4">
-                      <div class="card-text text-end"><%= product.price%> €
+                      <div class="card-text text-end"><%= ('%.2f' % product.price) %> €
                         <% if current_user&.is_admin? %>
                           <%= form_for product, method: :delete do |f| %>
-                            <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                            <%= f.button nil, class: "btn btn-danger btn-sm m-1" do %>
                                 <i class="fa-solid fa-trash"></i>
                             <% end %>
                           <% end %>
@@ -83,7 +83,7 @@
   </div>
   <% if current_user&.is_admin? %>
     <div class="d-flex gap-2 justify-content-center">
-      <%= button_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
+      <%= link_to "Ajouter un produit", new_product_path, class:"btn", style:"background-color: #a76551;" %>
     </div>
   <% end %>
 </div>
@@ -109,7 +109,6 @@
       <div class="text-center">
         <br>
         <%= button_to "Offrir un brunch",  checkout_brunch_path(total: 30), class: "btn btn-primary", remote: true %>
-        <br>
       </div>
     </div>
     <div class="col-lg-4">

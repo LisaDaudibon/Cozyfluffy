@@ -2,8 +2,7 @@
 
 <div class="my-form">
   <%= form_with(model: @cat, url: cat_path) do |f| %>
-    <h2>Mise à jour du profil</h2>
-    <br>
+    <h2 class="text-center">Mise à jour du profil</h2>
     <div class="field">
       <%= f.label :nom %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: "nom", class:"form-control"  %>
@@ -20,9 +19,15 @@
     </div>
     <br>
     <div class="field">
+      <%= f.label :lien_image %><br/>
+      <%= f.text_field :image_url, autocomplete: "image_url", class:"form-control" %>
+    </div>
+    <br>
+    <div class="field">
       <%= f.label :disponible_pour_adoption? %>
       <%= f.check_box :adoption %>
     </div>
+    <br>
     <div class="text-center">
       <%= form_for @cat, method: :patch do |f| %>
         <%= f.submit 'Actualiser', class:"btn btn-primary"%>

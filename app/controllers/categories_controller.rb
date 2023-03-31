@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     flash[:success] = "La categorie a été supprimée avec succès !"
-    redirect_to admin_index_path
+    redirect_to menu_index_path
   end
 
   private
