@@ -21,5 +21,10 @@ RSpec.describe Event, type: :model do
       expect { Event.create!(title: "bonjour", user: nil, date: DateTime.now) }
         .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: User must exist")
     end
+
+    it 'build event' do
+      e = Event.new(title: "bonjour", user:@user, date: DateTime.now)
+      expect(e).to be_valid
+    end
   end
 end
