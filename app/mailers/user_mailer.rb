@@ -22,4 +22,16 @@ class UserMailer < ApplicationMailer
         # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
         mail(to: user.email, subject: 'Nouvel événement à venir !')
       end
+
+      def adoption_email(adoption_form)
+        @adoption_form.cat= @cat = cat.find_by(adoption_form.id)
+        @admins = User.where(is_admin: true)
+        
+        @admins.each do |admin|
+          @adoptant = adoption_form
+          @url  = "https://git.heroku.com/cozyfluffy.git"
+          mail(to: admin.email, subject: 'Nouveau Formulaire !')
+        end
+     
+      end
 end
