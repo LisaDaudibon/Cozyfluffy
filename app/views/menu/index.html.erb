@@ -19,9 +19,9 @@
             <h5><strong><%= category.name %></strong></h5>
             <div class="d-flex justify-content-center">
               <% if current_user&.is_admin? %>
-                <a class="btn btn-info btn-sm" href="/categories/<%= category.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
+                <a class="btn btn-info btn-sm m-1" href="/categories/<%= category.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
                 <%= form_for category, method: :delete do |f| %>
-                  <%= f.button nil, class: "btn btn-danger btn-sm" do %>
+                  <%= f.button nil, class: "btn btn-danger btn-sm m-1" do %>
                     <i class="fa-solid fa-trash"></i>
                   <% end %>
                 <% end %>
