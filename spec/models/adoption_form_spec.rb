@@ -3,7 +3,7 @@ require 'date'
 
 RSpec.describe Event, type: :model do
   before do 
-    @user = User.create(pseudo: "John", email: "lisa@yopmail.com", password:"123456")
+    @cat = User.create(pseudo: "John", email: "lisa@yopmail.com")
   end
 
   describe 'fields validation' do
