@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "/categories", type: :request do
+RSpec.describe "/products", type: :request do
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
@@ -11,42 +11,42 @@ RSpec.describe "/categories", type: :request do
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_category_path
+      get new_product_path
       expect(response).to be_truthy
     end
   end
 
   describe "GET /edit" do
     it "renders a successful response" do
-      category = Category.create! valid_attributes
-      get edit_category_url(category)
+      product = Product.create! valid_attributes
+      get edit_product(path)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Category" do
+      it "creates a Product" do
         expect {
-          post categories_url, params: { category: valid_attributes }
-        }.to change(Category, :count).by(1)
+          post products_path, params: { product: valid_attributes }
+        }.to change(Product, :count).by(1)
       end
 
-      it "redirects to the menu" do
-        post categories_url, params: { category: valid_attributes }
+      it "redirects to the created category" do
+        post products_path, params: { product: valid_attributes }
         expect(response).to redirect_to(menu_index_path)
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Category" do
+      it "does not create a new Product" do
         expect {
-          post categories_url, params: { category: invalid_attributes }
-        }.to change(Category, :count).by(0)
+          post products_path, params: { product: invalid_attributes }
+        }.to change(Product, :count).by(0)
       end
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        post categories_url, params: { category: invalid_attributes }
+        post products_path, params: { product: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
 
@@ -59,17 +59,17 @@ RSpec.describe "/categories", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested category" do
-        category = Category.create! valid_attributes
-        patch category_url(category), params: { category: new_attributes }
-        category.reload
+      it "updates the requested product" do
+        product = Product.create! valid_attributes
+        patch product_path(product), params: { product: new_attributes }
+        product.reload
         skip("Add assertions for updated state")
       end
 
       it "redirects to the menu" do
-        category = Category.create! valid_attributes
-        patch category_url(category), params: { category: new_attributes }
-        category.reload
+        product = Product.create! valid_attributes
+        patch product_path(product), params: { product: new_attributes }
+        product.reload
         expect(response).to redirect_to(menu_index_path)
       end
     end
@@ -77,8 +77,8 @@ RSpec.describe "/categories", type: :request do
     context "with invalid parameters" do
 
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
-        category = Category.create! valid_attributes
-        patch category_url(category), params: { category: invalid_attributes }
+        product = Product.create! valid_attributes
+        patch product_path(product), params: { product: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
 
@@ -87,15 +87,15 @@ RSpec.describe "/categories", type: :request do
 
   describe "DELETE /destroy" do
     it "destroys the requested category" do
-      category = Category.create! valid_attributes
+      product = Product.create! valid_attributes
       expect {
-        delete category_url(category)
-      }.to change(Category, :count).by(-1)
+        delete product_path(product)
+      }.to change(Product, :count).by(-1)
     end
 
-    it "redirects to the menu" do
-      category = Category.create! valid_attributes
-      delete category_url(category)
+    it "redirects to the categories list" do
+      product = Product.create! valid_attributes
+      delete product_path(product)
       expect(response).to redirect_to(menu_index_url)
     end
   end
