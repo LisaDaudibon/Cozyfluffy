@@ -32,7 +32,7 @@ class AssociationController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
-    redirect_to association_path(association)
+    redirect_to association_path(@event)
   end
 
   def destroy
