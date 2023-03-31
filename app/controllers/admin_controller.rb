@@ -8,7 +8,7 @@ before_action :is_admin?
   def create 
     @user = User.new(user_params)
     if @user.save 
-      redirect_to admin_user_path 
+      redirect_to admin_users_path
     else
       flash[:error] = "Echec d'ajout d'utilisateur!"
       render :new
@@ -28,7 +28,7 @@ before_action :is_admin?
 
     if @user.update(user_params)
       flash[:success] = "Le produit a bien été modifié !"
-      redirect_to admin_user_path
+      redirect_to admin_users_path
     else
       flash[:danger] = "Erreur : ton formulaire n'était pas correct. "
       render 'edit', status: :unprocessable_entity
@@ -39,7 +39,7 @@ before_action :is_admin?
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = "L'utilisateur a été supprimé avec succès !"
-    redirect_to admin_user_path
+    redirect_to admin_users_path
   end
 
   private

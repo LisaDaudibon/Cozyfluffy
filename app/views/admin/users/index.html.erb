@@ -6,7 +6,7 @@
       <a class="btn btn-sm", style="background-color: #DC985F;"  href="/admin" role="button"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
     <div class="col-sm-11 text-center">
-      <h3>NOS UTILISATEURS</h3>
+      <h3>Nos utilisateurs</h3>
     </div>
   </div>
 </div>
@@ -19,7 +19,9 @@
           <tr>
             <th scope="col">Email</th>
             <th scope="col">Pseudo</th>
-            <th scope="col">Statut </th>
+            <th scope="col">Statut</th>
+            <th scope="col">Modifier</th>
+            <th scope="col">Supprimer</th>
           </tr>
         </thead>
         <tbody>
@@ -30,7 +32,7 @@
                 <% if user.is_admin  == true%>
                   <td>Admin</td>
                 <% else %>
-                  <td> Utilisateur</td>
+                  <td>Utilisateur</td>
                 <% end %>
                 <td><a class="btn btn-info btn-sm" href="/admin/<%= user.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a></td>
                 <td>
