@@ -6,7 +6,7 @@
       <a class="btn", style="background-color: #DC985F;"  href="/" role="button"><i class="fa-solid fa-arrow-left"></i></a>
     </div>
     <div class="col-sm-10">
-      <h3>MENU</h3>
+      <h3>Menu</h3>
     </div>
   </div>
 </div>
@@ -33,13 +33,13 @@
               <%if product.id.even?%>
                 <div class="card-body bg-light rounded">
                   <div class="row">
-                    <div class="col">
+                    <div class="col-8">
                       <div class="card-text"><%= product.name%></div>
                       <% if current_user&.is_admin? %>
                         <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"><i class="fa-solid fa-pen"></i></a>
                       <% end %>
                     </div>
-                    <div class="col">
+                    <div class="col-4">
                       <div class="card-text text-end"><%= product.price%> €
                         <% if current_user&.is_admin? %>
                           <%= form_for product, method: :delete do |f| %>
@@ -55,13 +55,13 @@
               <% else %>
                 <div class="card-body">
                   <div class="row">
-                    <div class="col">
+                    <div class="col-8">
                       <div class="card-text text-start"><%= product.name%></div>
                         <% if current_user&.is_admin? %>
                           <a class="btn btn-info btn-sm" href="/products/<%= product.id %>/edit" role="button"> <i class="fa-solid fa-pen"></i> </a>
                         <% end %>
                     </div>
-                    <div class="col">
+                    <div class="col-4">
                       <div class="card-text text-end"><%= product.price%> €
                         <% if current_user&.is_admin? %>
                           <%= form_for product, method: :delete do |f| %>
@@ -91,18 +91,31 @@
 
 <div class="container rounded-top text-primary justify-content-center bg-light">
   <div class="text-center p-1">
-      <h3>BRUNCH</h3>
+      <h3>Brunch</h3>
   </div>
 </div>
-<div class="container rounded-bottom bg-dark py-4 px-7 text-center">
-  <h5>Tous les dimanches de 11h à 15h</h5>
-  <div>Une boisson chaude et une boisson froide au choix</div>
-  <div>Une viennoiserie</div>
-  <div><em>Les plats ci-dessous ne sont disponible uniquement lors du brunch hebdomadaire</em></div>
-  <div>Plat sucré au choix : pancakes, granola avec fruits de saison, açaï bowl</div>
-  <div>Plat salé au choix : oeufs brouillés et bacon, avocado toast et saumon, pâtes à la truffe </div>
-  <div>Morceau de cake au choix</div>
-  <br><br>
-  <%= button_to "Offrir une carte cadeau pour un brunch",  checkout_brunch_path(total: 30), class: "btn btn-primary", remote: true %>
+<div class="container rounded-bottom bg-dark py-4 px-7">
+  <div class="row" style="padding-left:30px">
+    <div class="col-lg-8">
+      <h5>Tous les dimanches, de 11h à 15h</h5>
+      <br>
+      <ul>
+        <li>Une boisson chaude et une boisson froide au choix</li>
+        <li>Une pâtisserie ou encas au choix</li>
+        <li>Plat sucré au choix : pancakes / yahourt et granola aux fruits de saison / açaï bowl</li>
+        <li>Plat salé au choix : oeufs brouillés et bacon / toast à l'avocat et saumon</li>
+      </ul>
+      Prix : 30,00 €
+      <div class="text-center">
+        <br>
+        <%= button_to "Offrir un brunch",  checkout_brunch_path(total: 30), class: "btn btn-primary", remote: true %>
+        <br>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <img class="img-fluid img-thumbnail" style="max-height:250px"
+        src="https://images.unsplash.com/photo-1574783756547-258b3c720fe9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+    </div>
+  </div>
 </div>
 <br>
