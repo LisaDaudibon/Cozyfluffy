@@ -25,6 +25,7 @@ class CheckoutController < ApplicationController
   def donation
     @session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
+      invoice_creation: {enabled: true},
       line_items: [{
         price: 'price_1Mnx9lADoWQwVLJgNRfwestV', 
         quantity: 1
@@ -39,8 +40,10 @@ class CheckoutController < ApplicationController
   def success
     @session = Stripe::Checkout::Session.retrieve(params[:session_id])
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+    UserMailer.brunch_email(@session[:customer_details][:email], @session[:customer_details][:name]).deliver_now
   end
 
   def cancel
   end
+
 end
