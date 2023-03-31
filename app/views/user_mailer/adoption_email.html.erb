@@ -126,72 +126,56 @@
     </tr>
     <tr>
       <td align="center" style="background-color:#D4A693;">
- 
         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
           <tr>
             <td align="left" bgcolor="#ffffff" style="padding: 36px 24px 0; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; border-top: 3px solid #d4dadf;">
-              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; color:#a76551;">Bienvenue chez Cozy & Fluffy</h1>
+              <h1 style="margin: 0; font-size: 32px; font-weight: 700; letter-spacing: -1px; line-height: 48px; color:#a76551;">Formulaire</h1>
             </td>
           </tr>
         </table>
-     
       </td>
     </tr>
     <tr>
       <td align="center" style="background:#D4A693;">
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-          <tr>
-            <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color:#a76551;">
-              <p style="margin: 0;">Voici tes identifiants pour acceder à ton dashboard.</p>
-              <p style="margin: 0;">Tes identifiants:</p>
-              <p style="margin: 0;">Email: <%=@user.email%></p>
-              <p style="margin: 0;">Mot de passe: <%=@user.password%></p><br>
-            </td>
-          </tr>
-          <tr>
-            <td align="left" bgcolor="#ffffff">
-              <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                <tr>
-                  <td align="center" bgcolor="#ffffff" style="padding: 12px;">
-                    <table border="0" cellpadding="0" cellspacing="0">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                  <tr>
+                    <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; color:#a76551;">
+                      <p style="margin: 0;">Nouvel adoptant !</p>
+                      <p style="margin: 0;">Prénom: <%=@adoption_form.first_name%></p><br>
+                      <p style="margin: 0;">Nom: <%=@adoption_form.last_name%></p>
+                      <p style="margin: 0;">Email: <%=@adoption_form.email%></p>
+                      <p style="margin: 0;">Numéro: <%=@adoption_form.phone_number%></p><br>
+                    <p><br>
+                    </td>
+                  </tr>
                       <tr>
-                        <td align="center" bgcolor="#1a82e2" style="border-radius: 6px;">
-                          <a href="https://cozyfluffy.herokuapp.com/users/sign_in" target="_blank" style="display: inline-block; padding: 16px 36px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; background-color:#a76551; color: #ffffff; text-decoration: none; border-radius: 6px;">Viens vite!</a>
-                        </td>
+                          <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf; color:#a76551">
+                              <p style="margin: 0;">Sweet,<br> Warm</p>
+                          </td>
                       </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+                </table>
+              </td>
+            </tr>
           <tr>
-            <td align="left" bgcolor="#ffffff" style="padding: 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px; border-bottom: 3px solid #d4dadf; color:#a76551">
-              <p style="margin: 0;">Sweet,<br> Warm</p>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-   <tr>
-      <td align="center" style="background:#d4a693; padding: 24px;"> 
-        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-          <tr>
-            <td align="center" style="background-color:#d4a693 ;padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #FFFEE7;">
-              <p style="margin: 0;">Pour contacter Cozy & Fluffy:</p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="background-color:#d4a693 ;padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #FFFEE7;">
-              <p style="margin: 0;">cozyhoshii@gmail.com</p>
-              <p style="margin: 0;">75005 Paris, France, Rue du Chat Qui Pêche</p>
-            </td>
-          </tr>
-  	    </table>
-      </td>
+              <td align="center" style="background:#d4a693; padding: 24px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                  <tr>
+                      <td align="center" style="background-color:#d4a693 ;padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #FFFEE7;">
+                        <p style="margin: 0;">Pour contacter Cozy & Fluffy:</p>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td align="center" style="background-color:#d4a693 ;padding: 12px 24px; font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 20px; color: #FFFEE7;">
+                      <p style="margin: 0;">cozyhoshii@gmail.com</p>
+                      <p style="margin: 0;">75005 Paris, France, Rue du Chat Qui Pêche</p>
+                    </td>
+                  </tr>
+  	            </table>
+             </td>
     </tr>
     
-  </div>
+    </div>
+
+
 </body>
 </html>

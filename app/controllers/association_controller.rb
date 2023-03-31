@@ -17,7 +17,7 @@ class AssociationController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    
+
     if @event.save
       redirect_to association_index_path
     else
@@ -32,13 +32,13 @@ class AssociationController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
-    redirect_to root_path
+    redirect_to association_path(association)
   end
 
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to root_path
+    redirect_to association_index_path
   end
 
   private
