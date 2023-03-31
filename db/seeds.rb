@@ -75,19 +75,19 @@ Cat.create(
 )
 
 # Création de 2 évènements
-# Event.create(
-#   title: "Fête de lancement du salon",
-#   date: Date.new(2023,4,5),
-#   description: "Depuis la naissance de l'association Cozy & Fluffy le 12 Janvier 2023, beaucoup de choses se sont passées... Il est bientôt temps de fêter l'ouverture du salon de thé ! ",
-#   user_id: 1
-# )
+Event.create(
+  title: "Fete",
+  date: Date.new(2023,4,5),
+  description: "Inauguration",
+  user_id: 1
+)
 
-# Event.create(
-#   title: "Sensibilisation à la stérilisation",
-#   date: Date.new(2023,1,10),
-#   description: "Une portée non désirée est à l'origine de l'abandon de nombreux chatons, qui peuvent mourir faute de soins, d'alimentation ou grandir dans de mauvaises conditions.",
-#   user_id: 1
-# )
+Event.create(
+  title: "Sterilisation",
+  date: Date.new(2023,4,15),
+  description: "Sensibilisation",
+  user_id: 1
+)
 
 ### Création du menu
 
