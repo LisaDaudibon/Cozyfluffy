@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "home/index"
   resources :admin, only: %i[index new create edit update destroy]
   namespace :admin do
-    resources :users, only: %i[index destroy]
+    resources :users, only: %i[index]
   end
   resources :cats do
     resources :adoptions, only: %i[new create]
