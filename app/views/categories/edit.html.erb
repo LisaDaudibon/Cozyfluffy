@@ -1,7 +1,6 @@
 <div class="container-fluid">
-  <br>
   <div class="my-form">
-    <h4>Modifier une catégorie</h4><br>
+    <h4 class="text-center">Modifier une catégorie</h4>
     <%= form_with model: @category, url: category_path do |f| %>
       <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
       <div class="form-group">
@@ -9,7 +8,7 @@
         <%= f.text_field :name, autocomplete: "nom", class: 'form-control' %>
       </div>
       <br>
-      <div class="form-group">
+      <div class="form-group text-center">
         <button type="submit" class='btn btn-success'>Enregistrer</button>
       </div>
     <% end %>
