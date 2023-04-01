@@ -10,7 +10,7 @@ Lien du site en production : https://cozyfluffy.herokuapp.com
 - Executive summary, disponible sur [Google Docs](https://docs.google.com/document/d/1DrETqztTcQTJiFipLb5W6aw6aajQehMRc0twlfnxpyc/edit#heading=h.lekq4on0km5s)
 - Users stories, disponible sur [Trello](https://trello.com/b/3cWWWov9/cozy-fluffy)
 - Design du site, disponible sur [Figma](https://www.figma.com/file/yt0mUXTpcsOyUIc003yAZc/Untitled?node-id=0-1&t=2N2gOae54vuPXuQP-0)
-- Parcours utilisateur (à faire avec Lucid, Figma ou Miro)
+- Parcours utilisateur, disponible sur [Lucid](https://lucid.app/lucidchart/07ca552f-653f-4de0-93ee-92b8eed5fcba/edit?viewport_loc=-35%2C34%2C1707%2C779%2C0_0&invitationId=inv_f69a61cd-d4fb-4853-abf5-6cd8efadf594)
 
 ## Membres du groupe
 - Lisa Daudibon ([@LisaDaudibon](https://github.com/LisaDaudibon))
