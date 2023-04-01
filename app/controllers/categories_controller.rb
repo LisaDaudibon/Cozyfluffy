@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :is_admin?
-  
+
   def new
     @category = Category.new
   end 

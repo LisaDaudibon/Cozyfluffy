@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   def start_time
     self.date
   end
-    
+
   after_create :event_send
   def event_send
     User.all.each do |user|

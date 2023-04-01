@@ -1,5 +1,10 @@
 <div class="container rounded text-center bg-dark my-5 p-4"> 
   <h1>Succès</h1> 
   <p>Nous avons bien reçu votre paiement de <%= number_to_currency(@payment_intent.amount_received / 100.0, unit: "€", separator: ",", delimiter: "", format: "%n %u") %>.</p> 
-  <p>Le statut de votre paiement est : <%= @payment_intent.status %>.</p> 
+  <p>Le statut de votre paiement est : <%= @payment_intent.status %>.</p>
+
+  <br>
+
+  <a class="btn", style="background-color: #DC985F;" href="/"><i class="fa-solid fa-house" role="button"></i></a>
+
 </div>
