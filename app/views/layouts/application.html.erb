@@ -40,7 +40,7 @@
 
 <script>
   mapboxgl.accessToken = "<%= ENV['MAPBOX_ACCESS_TOKEN']%>";
-  
+
   const geojson = {
     'type': 'FeatureCollection',
     'features': [
@@ -57,7 +57,7 @@
       }
     ]
   };
-  
+
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',

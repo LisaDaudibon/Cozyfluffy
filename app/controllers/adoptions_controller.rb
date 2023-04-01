@@ -11,7 +11,6 @@ before_action :find_cat
     @adoption_form.cat = find_cat
 
     if @adoption_form.save
-      
       redirect_to cats_path
     else
       render :new
