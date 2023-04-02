@@ -2,6 +2,13 @@ require 'rails_helper'
 require 'date'
 
 RSpec.describe Cat, type: :model do
+  describe 'cat' do
+    it "has a valid factory" do
+      # teste toujours tes factories pour voir si elles sont valides
+      expect(build(:cat)).to be_valid
+    end
+  end
+
   describe 'fields validation' do
     it 'needs name' do
       expect { Cat.create!(name: nil, birth_date:Date.new(2017,3,12), description:"La maman du salon, elle supervise tout avec bienveillance", adoption:"true", image_url:"https://images.unsplash.com/photo-1491485880348-85d48a9e5312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80") }

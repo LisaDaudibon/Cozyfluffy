@@ -1,6 +1,7 @@
+
 FactoryBot.define do
   factory :cat do
-    pseudo { "John" }
+    name { "John" }
     birth_date { DateTime.now }
   end
 end
