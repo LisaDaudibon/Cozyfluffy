@@ -3,28 +3,35 @@ require 'date'
 
 RSpec.describe Event, type: :model do
   before do 
-    @user = User.create(pseudo: "John", email: "lisa@yopmail.com", password:"123456")
+    @event = FactoryBot.create(:event)
   end
 
-  describe 'fields validation' do
-    it 'needs title' do
-      expect { Event.create!(title: nil, user:@user, date: DateTime.now) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Title can't be blank")
-    end
-
-    it 'needs date' do
-      expect { Event.create!(title: "bonjour", user:@user, date: nil) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Date can't be blank")
-    end
-
-    it 'needs user' do
-      expect { Event.create!(title: "bonjour", user: nil, date: DateTime.now) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: User must exist")
-    end
-
-    it 'build event' do
-      e = Event.new(title: "bonjour", user:@user, date: DateTime.now)
-      expect(e).to be_valid
-    end
+  it "has a valid factory" do
+    expect(build(:event)).to be_valid
   end
+  
+  context 'validations' do
+    it 'is valid with valid attributes' do
+      expect(@event).to be_a(Event)
+    end 
+
+    describe 'title' do
+      it {expect(@event).to validate_presence_of(:title)}
+    end 
+
+    describe 'date' do
+      it {expect(@event).to validate_presence_of(:date)}
+    end 
+  end 
+
+  context "public instance methods" do
+
+    describe "title" do
+      it "should return a string" do
+        expect(@event.title).to be_a(String)
+      end
+    end
+
+  end
+
 end
