@@ -20,8 +20,9 @@ Lien du site en production : https://cozyfluffy.herokuapp.com
 
 ## Versions, gems et API utilisées
 Ruby 3.0.0, Rails 7.0.4.2, PostgreSQL 1.1.  
-Gems importantes : Stripe 5.53, Simple Calendar 2.4, Devise, Dotenv, Rspec-rails.  
-API (Application Programming Interface) : Stripe, Sendgrid, Mapbox GL JS.  
+Gems importantes : [Stripe](https://github.com/stripe/stripe-ruby), [Simple Calendar](https://github.com/excid3/simple_calendar), [Devise](https://github.com/heartcombo/devise), [Dotenv](https://github.com/bkeepers/dotenv), [I18n](https://github.com/ruby-i18n/i18n).  
+Gems de tests : [Rspec-rails](https://github.com/rspec/rspec-rails), [FactoryBot Rails](https://github.com/thoughtbot/factory_bot_rails), [NyanCatFormatter](https://github.com/mattsears/nyan-cat-formatter).  
+API intégrées : [Stripe](https://stripe.com/docs/api), [Sendgrid](https://sendgrid.com/solutions/email-api/), [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/).  
 Hébergement : Heroku.
 
 ## Lancement du programme en local
@@ -30,12 +31,15 @@ Dans le terminal, exécuter les lignes suivantes :
 - `bundle install` pour installer les versions et gems mentionnées.
 - `rails assets:precompile` pour compiler les fichiers CSS et JS utilisés.
 - `rails db:create db:migrate db:seed` pour créer et remplir la base de données.
-- `rails s` pour lancer le serveur et visualiser le site sur http://localhost:3000.
-- `rspec` pour lancer les tests
-- `rspec spec/requests/users_spec.rb` pour lancer les tests sur un fichier spécifique
-- `rspec --format NyanCatFormatter` pour lancer les tests en utilisant la gem NyanCatFormatter
+- `rails s` pour lancer le serveur et visualiser le site sur http://localhost:3000.  
 
 NB : Les fonctionnalités utilisant des clés API comme les mails, paiements et affichage de la carte peuvent ne pas fonctionner.
+
+## Tester le programme en local
+Pour utiliser les gems de tests, exécuter les lignes suivantes dans le terminal :
+- `rspec` pour lancer les 100 tests préparés.
+- `rspec spec/requests/users_spec.rb` pour lancer les tests sur un fichier spécifique.
+- `rspec --format NyanCatFormatter` pour lancer les tests en utilisant la gem NyanCatFormatter.
 
 ## Diagramme ER base de données
 Ci-dessous un diagramme entité-relation de la base de données utilisée :  
