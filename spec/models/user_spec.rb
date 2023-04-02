@@ -1,29 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   before do 
-    @user = User.create(pseudo: "John", email: "lisa@yopmail.com", password:"123456")
+    @user = FactoryBot.create(:user)
   end
 
-  describe 'fields validation' do
-    it 'needs email' do
-      expect { User.create!(pseudo: "John", email: nil, password:"123456") }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email can't be blank")
+  describe 'username' do
+    it "needs email" do
+      invalid_user = FactoryBot.build(:user, email:nil)
+      expect(invalid_user).not_to be_valid
+      expect(invalid_user.errors.include?(:email)).to eq(true)
     end
 
-    it 'needs password' do
-      expect { User.create!(pseudo: "John", email: "valentin@yopmail.com", password:nil) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Password can't be blank")
+    it "needs email to be unique" do
+      invalid_user = FactoryBot.build(:user, email:"johndoe@yopmail.com")
+      expect(invalid_user).not_to be_valid
+      expect(invalid_user.errors.include?(:email)).to eq(true)
     end
 
-    it 'needs password_confirmation to be the same as password' do
-      expect { User.create!(pseudo: "John", email: "valentin@yopmail.com", password:"123456", password_confirmation: "123") }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Password confirmation doesn't match Password")
+    it "needs password" do
+      invalid_user = FactoryBot.build(:user, password:nil)
+      expect(invalid_user).not_to be_valid
+      expect(invalid_user.errors.include?(:password)).to eq(true)
     end
 
-    it 'needs email to be unique' do
-      expect { User.create!(pseudo: "John", email: "lisa@yopmail.com", password:"123456") }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email has already been taken")
+    it "needs password_confirmation to be the same as the password" do
+      invalid_user = FactoryBot.build(:user, password_confirmation:"123")
+      expect(invalid_user).not_to be_valid
+      expect(invalid_user.errors.include?(:password_confirmation)).to eq(true)
     end
 
     it 'build user' do
