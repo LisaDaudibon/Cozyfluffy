@@ -26,11 +26,14 @@ Hébergement : Heroku.
 
 ## Lancement du programme en local
 Télécharger le dossier GitHub en local ou le cloner, puis vérifier les versions utilisées.  
-Dans le terminal, exécuter les lignes suivantes :  
-- `bundle install` pour installer les versions et gems mentionnées.  
-- `rails assets:precompile` pour compiler les fichiers CSS et JS utilisés. 
-- `rails db:create db:migrate db:seed` pour créer et remplir la base de données.  
-- `rails s` pour lancer le serveur et visualiser le site sur http://localhost:3000.  
+Dans le terminal, exécuter les lignes suivantes :
+- `bundle install` pour installer les versions et gems mentionnées.
+- `rails assets:precompile` pour compiler les fichiers CSS et JS utilisés.
+- `rails db:create db:migrate db:seed` pour créer et remplir la base de données.
+- `rails s` pour lancer le serveur et visualiser le site sur http://localhost:3000.
+- `rspec` pour lancer les tests
+- `rspec spec/requests/users_spec.rb` pour lancer les tests sur un fichier spécifique
+- `rspec --format NyanCatFormatter` pour lancer les tests en utilisant la gem NyanCatFormatter
 
 NB : Les fonctionnalités utilisant des clés API comme les mails, paiements et affichage de la carte peuvent ne pas fonctionner.
 

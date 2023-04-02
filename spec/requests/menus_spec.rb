@@ -1,16 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "/menus", type: :request do
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  before do
+    @category = FactoryBot.create(:category)
+    @product = FactoryBot.create(:product, category_id:@category.id)
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
-      Product.create! valid_attributes
-      Category.create! valid_attributes
+  describe 'GET / Index' do
+    it 'returns success' do
       get menu_index_path
-      expect(response).to be_successful
+
+      expect(response).to have_http_status 200
     end
   end
 end

@@ -13,7 +13,7 @@ RSpec.describe "/admin", type: :request do
   describe "GET /index" do
     it "renders a successful response" do
       User.create! valid_attributes
-      get admin_path
+      get admin_index_path
       expect(response).to be_successful
     end
   end

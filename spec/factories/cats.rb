@@ -1,4 +1,3 @@
-
 FactoryBot.define do
   factory :cat do
     name { "John" }
