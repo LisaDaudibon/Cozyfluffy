@@ -1,34 +1,47 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  before do 
-    @user = User.create(pseudo: "John", email: "lisa@yopmail.com", password:"123456")
+
+  before do
+    @user = FactoryBot.create(:user)
   end
 
-  describe 'fields validation' do
-    it 'needs email' do
-      expect { User.create!(pseudo: "John", email: nil, password:"123456") }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email can't be blank")
+  context "validation" do
+    it "has a valid factory" do
+      # teste toujours tes factories pour voir si elles sont valides
+      expect(build(:user, email:"john@yopmail.com")).to be_valid
     end
 
-    it 'needs password' do
-      expect { User.create!(pseudo: "John", email: "valentin@yopmail.com", password:nil) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Password can't be blank")
+    it "is valid with valid attributes" do
+      expect(@user).to be_a(User)
     end
 
-    it 'needs password_confirmation to be the same as password' do
-      expect { User.create!(pseudo: "John", email: "valentin@yopmail.com", password:"123456", password_confirmation: "123") }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Password confirmation doesn't match Password")
+    describe "email" do
+      it { expect(@user).to validate_presence_of(:email) }
     end
 
-    it 'needs email to be unique' do
-      expect { User.create!(pseudo: "John", email: "lisa@yopmail.com", password:"123456") }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email has already been taken")
+    describe "password" do
+      it { expect(@user).to validate_presence_of(:password) }
     end
 
-    it 'build user' do
-      u = User.create!(pseudo: "John", email: "valentin@yopmail.com", password:"123456")
-      expect(u).to be_valid
+    describe "password_confirmation matches the password" do
+      #valide que le mot de passe et la confirmation du mot de passe sont bien identique
+      it { should validate_confirmation_of(:password) }
+    end
+
+    describe 'email uniqueness for user' do
+      it "needs email to be unique" do
+        invalid_user = FactoryBot.build(:user, email:"johndoe@yopmail.com")
+        expect(invalid_user).not_to be_valid
+        expect(invalid_user.errors.include?(:email)).to eq(true)
+      end
+    end
+  end
+
+  context "associations" do
+    describe "events" do
+      #valide la présence du has_many :events dans le modèle User
+      it { expect(@user).to have_many(:events) }
     end
   end
 end

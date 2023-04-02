@@ -1,6 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe "/cats", type: :request do
+  before do
+    @cat = FactoryBot.create(:cat)
+  end
+
+  describe 'GET / Index' do
+    it 'returns success' do
+      get cats_path
+
+      expect(response).to have_http_status 200
+    end
+  end
+
+  describe 'GET / Show' do
+    it 'returns success' do
+      get cat_path(@cat.id)
+
+      expect(response).to have_http_status 200
+    end
+  end
+
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
   }
@@ -8,29 +28,6 @@ RSpec.describe "/cats", type: :request do
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
-
-  describe "GET /index" do
-    it "renders a successful response" do
-      Cat.create! valid_attributes
-      get cats_path
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /show" do
-    it "renders a successful response" do
-      cat = Cat.create! valid_attributes
-      get cats_path(cat)
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /new" do
-    it "renders a successful response" do
-      get new_cat_path
-      expect(response).to be_truthy
-    end
-  end
 
   describe "GET /edit" do
     it "renders a successful response" do

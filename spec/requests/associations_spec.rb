@@ -1,6 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe "/association", type: :request do
+  before do
+    @event = FactoryBot.create(:event)
+  end
+
+  describe 'GET / Index' do
+    it 'returns success' do
+      get association_index_path
+
+      expect(response).to have_http_status 200
+    end
+  end
+
+  describe 'GET / Show' do
+    it 'returns success' do
+      get association_path(@event.id)
+
+      expect(response).to have_http_status 200
+    end
+  end
+
 
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -9,22 +29,6 @@ RSpec.describe "/association", type: :request do
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
-
-  describe "GET /index" do
-    it "renders a successful response" do
-      Event.create! valid_attributes
-      get association_path
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET /show" do
-    it "renders a successful response" do
-      association = Event.create! valid_attributes
-      get association_path(association)
-      expect(response).to be_successful
-    end
-  end
 
   describe "GET /new" do
     it "renders a successful response" do

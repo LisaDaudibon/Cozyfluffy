@@ -1,8 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "/adoptions", type: :request do
-  before do 
-    @cat = Cat.create(name:"Lapon", birth_date:Date.new(2017,3,12))
+  before do
+    @cat = FactoryBot.create(:cat)
+  end
+
+  describe 'GET / New' do
+    it 'returns success' do
+      get new_cat_adoption_path(@cat.id)
+
+      expect(response).to have_http_status 200
+    end
   end
 
   let(:valid_attributes) {
@@ -12,13 +20,6 @@ RSpec.describe "/adoptions", type: :request do
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
-
-  describe "GET /new" do
-    it "renders a successful response" do
-      get new_cat_adoption_path(@cat)
-      expect(response).to be_truthy
-    end
-  end
 
   describe "POST /create" do
     context "with valid parameters" do
