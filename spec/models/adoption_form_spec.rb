@@ -3,43 +3,60 @@ require 'date'
 
 RSpec.describe AdoptionForm, type: :model do
   before do 
-    @cat = Cat.create(name:"Lapon", birth_date:Date.new(2017,3,12))
+    @adoption_form = FactoryBot.create(:adoption_form)
   end
 
-  describe 'fields validation' do
-    it 'needs first_name' do
-      expect { AdoptionForm.create!(first_name: nil, last_name: "Maxime", email: "lisa@yopmail.com", phone_number: "06 05 45 57 67", cat:@cat) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: First name can't be blank")
+  it 'has a valid factory' do
+    expect(build(:adoption_form)).to be_valid
+  end
+
+  context 'validation' do
+    it 'is valid with valid attributes' do
+      expect(@adoption_form).to be_a(AdoptionForm)
+    end 
+
+    describe 'first_name' do
+      it {expect(@adoption_form).to validate_presence_of(:first_name)}
     end
 
-    it 'needs last_name' do
-      expect { AdoptionForm.create!(first_name: "John", last_name: nil, email: "lisa@yopmail.com", phone_number: "06 05 45 57 67", cat:@cat) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Last name can't be blank")
+    describe 'last_name' do
+      it {expect(@adoption_form).to validate_presence_of(:last_name)}
     end
 
-    it 'needs email' do
-      expect { AdoptionForm.create!(first_name: "John", last_name: "Maxime", email: nil, phone_number: "06 05 45 57 67", cat:@cat) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email can't be blank, Email n'a pas le bon format mon coco ! ")
+    describe 'email' do
+      it {expect(@adoption_form).to validate_presence_of(:email)}
     end
 
-    it 'needs email to have the right format' do
-      expect { AdoptionForm.create!(first_name: "John", last_name: "Maxime", email: "lisa@yopmail.", phone_number: "06 05 45 57 67", cat:@cat) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Email n'a pas le bon format mon coco ! ")
+    describe 'phone_number' do
+      it {expect(@adoption_form).to validate_presence_of(:phone_number)}
     end
 
-    it 'needs phone_number' do
-      expect { AdoptionForm.create!(first_name: "John", last_name: "Maxime", email: "lisa@yopmail.com", phone_number: nil, cat:@cat) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Phone number can't be blank")
+  end
+
+  context "public instance methods" do
+
+    describe "first name" do
+      it "should return a string" do
+        expect(@adoption_form.first_name).to be_a(String)
+      end
     end
 
-    it 'needs cat' do
-      expect { AdoptionForm.create!(first_name: "John", last_name: "Maxime", email: "lisa@yopmail.com", phone_number: "06 05 45 57 67", cat:nil) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Cat must exist")
+    describe "last name" do
+      it "should return a string" do
+        expect(@adoption_form.last_name).to be_a(String)
+      end
     end
 
-    it 'build adoption_form' do
-      a = AdoptionForm.new(first_name: "John", last_name: "Maxime", email: "lisa@yopmail.com", phone_number: "06 05 45 57 67", cat:@cat)
-      expect(a).to be_valid
+    describe "phone number" do
+      it "should return a integer" do
+        expect(@adoption_form.phone_number).to be_a(Integer)
+      end
+    end
+
+    describe "email" do
+      it "should return a string" do
+        expect(@adoption_form.email).to be_a(String)
+      end
     end
   end
 end

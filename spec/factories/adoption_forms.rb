@@ -4,6 +4,6 @@ FactoryBot.define do
     last_name { "Doe" }
     email { "johndoe@yopmail.com" }
     phone_number { "0657575757" }
-    cat { FactoryBot.create(:cat) }
+    association :cat
   end
 end

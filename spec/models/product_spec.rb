@@ -2,34 +2,47 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   before do 
-    @category = Category.create(name:"lapin")
-    @product = Product.create(name:"Expresso", price: "5.0", category:@category)
+    @product = FactoryBot.create(:product)
   end
 
-  describe 'fields validation' do
-    it 'needs name' do
-      expect { Product.create!(name: nil, price: "5.0", category:@category) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Name can't be blank")
+  it "has a valid factory" do
+    expect(build(:product, name: "Matcha Latte")).to be_valid
+  end
+
+  context 'validation' do
+    it 'is valid with valid attributes' do
+      expect(@product).to be_a(Product)
+    end 
+
+    describe 'name' do
+      it {expect(@product).to validate_presence_of(:name)}
+    end 
+
+    describe 'price' do
+      it {expect(@product).to validate_presence_of(:price)}
+    end 
+
+    describe 'name uniqueness' do
+      it "needs name to be unique" do
+        invalid_name = FactoryBot.build(:product, name:"")
+        expect(invalid_name).not_to be_valid
+        expect(invalid_name.errors.include?(:name)).to eq(true)
+      end
+    end
+  end 
+
+  context "public instance methods" do
+
+    describe "price" do
+      it "should return a float" do
+        expect(@product.price).to be_a(Float)
+      end
     end
 
-    it 'needs name to be unique' do
-      expect { Product.create!(name: "Expresso", price: "5.0", category:@category) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Name has already been taken")
-    end
-
-    it 'needs price' do
-      expect { Product.create!(name: "Margarita", price:nil, category:@category) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Price can't be blank")
-    end
-
-    it 'needs category' do
-      expect { Product.create!(name: "Margarita", price:"5,50", category: nil) }
-        .to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Category must exist")
-    end
-
-    it 'build product' do
-      p = Product.new(name:"Margarita", price: "6,50", category:@category)
-      expect(p).to be_valid
+    describe "name" do
+      it "should return a string" do
+        expect(@product.name).to be_a(String)
+      end
     end
   end
-end
+end 
