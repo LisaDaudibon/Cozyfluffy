@@ -55,4 +55,4 @@ Le site n'étant plus en production, vous pouvez visualiser certaines pages enre
 - [Page Chat: Filou](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_ChatFilou.pdf)
 - [Page Menu](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Menu.pdf)
 - [Page Admin](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Admin.pdf)
-- [Page Dashboard (Admin)](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_DashobardAdmin.pdf)
+- [Page Dashboard Admin](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_DashboardAdmin.pdf)
