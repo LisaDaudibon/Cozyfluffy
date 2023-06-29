@@ -46,10 +46,13 @@ Ci-dessous un diagramme entité-relation de la base de données utilisée :
 
 <img src=/app/assets/images/database_cozyfluffy.png width="700">
 
-## Home page overview
+## Visualisation du site
 
-<object data="https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Home.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Home.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Home.pdf">Download PDF</a>.</p>
-    </embed>
-</object>
+Le site n'étant plus en production, vous pouvez visualiser certaines pages enregistrées en PDF :
+- [Page d'accueil](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Home.pdf)
+- [Page Association](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Association.pdf)
+- [Page Chats](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Chats.pdf)
+- [Page Chat: Filou](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_ChatFilou.pdf)
+- [Page Menu](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Menu.pdf)
+- [Page Admin](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Admin.pdf)
+- [Page Dashboard (Admin)](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_DashobardAdmin.pdf)
