@@ -94,9 +94,9 @@ body {
 .jumbotron {
   padding-top: 140px;
   padding-bottom: 20px;
-  background: url('https://scontent.fmel8-1.fna.fbcdn.net/v/t1.6435-9/188845091_323679679116612_7339041646934366641_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=YjJxdxtmuisAX_4pN5o&_nc_ht=scontent.fmel8-1.fna&oh=00_AfCJBQrflx6Fmmwub2rZoA3GJsGJp2mLnAcT_NWtujmOJg&oe=64425DD1') center center;
+  background: url('https://images.unsplash.com/photo-1571570703598-39eb580a0329?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80');
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   max-height : 90%;
 }
 
