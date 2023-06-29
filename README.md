@@ -48,8 +48,8 @@ Ci-dessous un diagramme entité-relation de la base de données utilisée :
 
 ## Home page overview
 
-<object data="https://suziwan.github.io/Portfolio/documents/CV_SC_Data_Analyst.pdf" type="application/pdf" width="700px" height="700px">
-    <embed src="https://suziwan.github.io/Portfolio/documents/CV_SC_Data_Analyst.pdf">
-        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://suziwan.github.io/Portfolio/documents/CV_SC_Data_Analyst.pdf">Download PDF</a>.</p>
+<object data="https://suziwan.github.io/Cozyfluffy/documents/CozyFluffy_Home.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://suziwan.github.io/Cozyfluffy/documents/CozyFluffy_Home.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://suziwan.github.io/Cozyfluffy/documents/CozyFluffy_Home.pdf">Download PDF</a>.</p>
     </embed>
 </object>
