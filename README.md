@@ -48,15 +48,11 @@ Ci-dessous un diagramme entité-relation de la base de données utilisée :
 
 ## Visualisation du site
 
-Le site n'étant plus en production, vous pouvez visualiser certaines pages :
+Le site n'étant plus en production, voici la visualisation de la plupart des pages du site :
 
 - Page d'accueil
 <kbd>
   <img src=/app/assets/images/cozyfluffy_home1.png width="100%">
-</kbd>
-&nbsp
-
-<kbd>
   <img src=/app/assets/images/cozyfluffy_home2.png width="100%">
 </kbd>
 &nbsp
@@ -64,10 +60,6 @@ Le site n'étant plus en production, vous pouvez visualiser certaines pages :
 - Page Association
 <kbd>
   <img src=/app/assets/images/cozyfluffy_asso1.png width="100%">
-</kbd>
-&nbsp
-
-<kbd>
   <img src=/app/assets/images/cozyfluffy_asso2.png width="100%">
 </kbd>
 &nbsp
@@ -75,10 +67,6 @@ Le site n'étant plus en production, vous pouvez visualiser certaines pages :
 - Page Chats
 <kbd>
   <img src=/app/assets/images/cozyfluffy_chats1.png width="100%">
-</kbd>
-&nbsp
-
-<kbd>
   <img src=/app/assets/images/cozyfluffy_chats2.png width="100%">
 </kbd>
 &nbsp
@@ -92,10 +80,6 @@ Le site n'étant plus en production, vous pouvez visualiser certaines pages :
 - Page Menu
 <kbd>
   <img src=/app/assets/images/cozyfluffy_menu1.png width="100%">
-</kbd>
-&nbsp
-
-<kbd>
   <img src=/app/assets/images/cozyfluffy_menu2.png width="100%">
 </kbd>
 &nbsp
