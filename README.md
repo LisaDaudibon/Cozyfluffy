@@ -48,11 +48,66 @@ Ci-dessous un diagramme entité-relation de la base de données utilisée :
 
 ## Visualisation du site
 
-Le site n'étant plus en production, vous pouvez visualiser certaines pages enregistrées en PDF :
-- [Page d'accueil](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Home.pdf)
-- [Page Association](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Association.pdf)
-- [Page Chats](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Chats.pdf)
-- [Page Chat: Filou](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_ChatFilou.pdf)
-- [Page Menu](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Menu.pdf)
-- [Page Admin](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_Admin.pdf)
-- [Page Dashboard Admin](https://github.com/Suziwan/Cozyfluffy/blob/development/documents/CozyFluffy_DashboardAdmin.pdf)
+Le site n'étant plus en production, vous pouvez visualiser certaines pages :
+
+- Page d'accueil
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_home1.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_home2.png width="100%">
+</kbd>
+&nbsp
+
+- Page Association
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_asso1.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_asso2.png width="100%">
+</kbd>
+&nbsp
+
+- Page Chats
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_chats1.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_chats2.png width="100%">
+</kbd>
+&nbsp
+
+- Page Chat: Filou
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_chat_filou.png width="100%">
+</kbd>
+&nbsp
+
+- Page Menu
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_menu1.png width="100%">
+</kbd>
+&nbsp
+
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_menu2.png width="100%">
+</kbd>
+&nbsp
+
+- Page Admin
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_admin.png width="100%">
+</kbd>
+&nbsp
+
+- Page Dashboard Admin
+<kbd>
+  <img src=/app/assets/images/cozyfluffy_dashboard_admin.png width="100%">
+</kbd>
+&nbsp
