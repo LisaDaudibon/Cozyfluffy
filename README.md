@@ -48,7 +48,7 @@ Ci-dessous un diagramme entité-relation de la base de données utilisée :
 
 ## Visualisation du site
 
-Le site n'étant plus en production, voici la visualisation de la plupart des pages du site :
+Le site n'étant plus en production, voici une visualisation de la plupart des pages du site :
 
 - Page d'accueil
 <kbd>
