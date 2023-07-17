@@ -25,11 +25,11 @@ main_admin = User.create(
 	is_admin: true
 )
 
-# Création de 4 chats
+# Création de 6 chats
 Cat.create(
   name: 'Mistigri',
   birth_date: Date.new(2017,3,12),
-  description: "La maman du salon, elle supervise tout avec bienveillance",
+  description: "Mistigri est un peu la maman du salon, elle supervise tout avec bienveillance, et s'occupe des petits.",
   adoption: false,
   image_url: "https://images.unsplash.com/photo-1491485880348-85d48a9e5312?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
 )
@@ -37,7 +37,7 @@ Cat.create(
 Cat.create(
   name: 'Ronron',
   birth_date: Date.new(2014,10,24),
-  description: "Comme son nom l'indique, il ronronne à tout va et adore les câlins",
+  description: "Comme son nom l'indique, il ronronne à tout va et adore les câlins. C'est la mascotte du salon!",
   adoption: false,
   image_url: "https://images.unsplash.com/photo-1571570703598-39eb580a0329?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
 )
@@ -45,7 +45,7 @@ Cat.create(
 Cat.create(
   name: 'Filou',
   birth_date: Date.new(2021,4,6),
-  description: "Etant très affectueux, si Filou vous choisi il vous suivra de partout",
+  description: "Etant très affectueux, si Filou vous choisi il vous suivra de partout et réclamera des gratouilles.",
   adoption: true,
   image_url: "https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 )
@@ -53,7 +53,7 @@ Cat.create(
 Cat.create(
   name: 'Patoune',
   birth_date: Date.new(2023,1,10),
-  description: "Le bébé de la bande, il est plein d'énergie et adore jouer",
+  description: "Le bébé de la bande, il est plein d'énergie et adore jouer! Un petit chasseur dans l'âme.",
   adoption: true,
   image_url: "https://images.unsplash.com/photo-1626170733247-dfc57b1186df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 )
@@ -61,7 +61,7 @@ Cat.create(
 Cat.create(
   name: 'Topaz',
   birth_date: Date.new(2021,6,6),
-  description: "Étant très affectueuse et joueuse, elle s'entendra bien avec les enfants",
+  description: "Étant très affectueuse et joueuse, Topaz s'entend très bien avec les enfants.",
   adoption: true,
   image_url: "https://images.unsplash.com/photo-1620196244888-d31ff5bbf163?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 )
@@ -69,23 +69,23 @@ Cat.create(
 Cat.create(
   name: 'Onyx',
   birth_date: Date.new(2023,2,10),
-  description: "De nature calme, il préfèrera la tranquillité et les siestes",
+  description: "De nature calme, Onyx préfèrera la tranquillité et les siestes. Offrez-lui vos genoux et il ne vous lachera pas.",
   adoption: true,
   image_url: "https://images.unsplash.com/photo-1514993808123-26d90301ceaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
 )
 
 # Création de 2 évènements
 Event.create(
-  title: "Fete",
+  title: "Fête de lancement du salon",
   date: Date.new(2023,4,5),
-  description: "Inauguration",
+  description: "Depuis la naissance de l'association Cozy & Fluffy le 12 Janvier 2023, beaucoup de choses se sont passées... Il est bientôt temps de fêter l'ouverture du salon de thé !",
   user_id: 1
 )
 
 Event.create(
-  title: "Sterilisation",
+  title: "Sensibilisation à la stérilisation",
   date: Date.new(2023,4,15),
-  description: "Sensibilisation",
+  description: "Une portée non désirée est à l'origine de l'abandon de nombreux chatons, qui peuvent mourir faute de soins, d'alimentation ou grandir dans de mauvaises conditions.",
   user_id: 1
 )
 
