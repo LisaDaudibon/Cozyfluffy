@@ -6,6 +6,7 @@ Ce projet de site web est la vitrine d'un salon de thé associatif sur le concep
 Il ne s'agit pas d'un salon de thé physique ou d'une association réelle, mais d'une idée de site web pour le projet final de la formation THP Fullstack du groupe Cozy & Fluffy.  
 Lien du site en production : https://cozyfluffy.herokuapp.com (hors ligne)
 
+
 ## Cahier des charges
 - Executive summary, disponible sur [Google Docs](https://docs.google.com/document/d/1DrETqztTcQTJiFipLb5W6aw6aajQehMRc0twlfnxpyc/edit#heading=h.lekq4on0km5s)
 - Users stories, disponible sur [Trello](https://trello.com/b/3cWWWov9/cozy-fluffy)
@@ -26,12 +27,21 @@ API intégrées : [Stripe](https://stripe.com/docs/api), [Sendgrid](https://send
 Hébergement : Heroku.
 
 ## Lancement du programme en local
-Télécharger le dossier GitHub en local ou le cloner, puis vérifier les versions utilisées.  
-Dans le terminal, exécuter les lignes suivantes :
+Télécharger le dossier GitHub en local ou le cloner, puis vérifier les versions utilisées.
+
+Pour pouvoir lancer le seed, il vous faudra créer une clé API Sendgrid et pour avoir en local toutes les fonctionnalités du projet, il faudra aussi créer une clé API Mapbox et une clé API Stripe. 
+
+Pour Sendgrid, renommer le fichier .env.local en .env puis remplacer la variable SENDGRID_PWD par votre clé personnelle entre ' '(guillemet simple).
+
+Pour Mapbox, il faut remplacer la variable MAPBOX_ACCESS_TOKEN par votre clé entre ' ' (guillemet simple).
+
+Pour Stripe, il faut remplacer les deux variables PUBLISHABLE_STRIPE_KEY et SECRET_STRIPE_KEY par vos deux clés Stripe entre ' ' (guillemet simple).
+
+Ensuite, dans le terminal, exécuter les lignes suivantes :
 - `bundle install` pour installer les versions et gems mentionnées.
 - `rails assets:precompile` pour compiler les fichiers CSS et JS utilisés.
 - `rails db:create db:migrate db:seed` pour créer et remplir la base de données.
-- `rails s` pour lancer le serveur et visualiser le site sur http://localhost:3000.  
+- `rails s` pour lancer le serveur et visualiser le site sur http://localhost:3000.
 
 NB : Les fonctionnalités utilisant des clés API comme les mails, paiements et affichage de la carte peuvent ne pas fonctionner.
 
